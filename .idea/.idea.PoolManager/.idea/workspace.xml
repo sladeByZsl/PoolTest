@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1c450c47-5c0c-4dbb-a48f-17f400981940" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PoolBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PoolBase.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NewPool/PoolBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NewPool/PoolBase.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,34 +16,40 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/NewPool/PoolManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/QFramework/Framework/Examples/ArchitectureExample/Scripts/Event/GameStartEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/QFramework/Framework/Examples/ArchitectureExample/Scripts/Event/GamePassEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/QFramework/Toolkits/ActionKit/Example/3.CustomAction/CustomActionExample.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/QFramework/Framework/Examples/ArchitectureExample/Scripts/Event/OnCountDownEndEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/QFramework/Framework/Examples/ArchitectureExample/Scripts/Event/OnMissEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/QFramework/Toolkits/PackageKit/Editor/MarkdownView/Scripts/Renderer/RendererBlockCode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PoolManagerExampleFiles/Scripts/DeleteAndCreateInSameFrame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PoolManagerExampleFiles/Scripts/CreationExample.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F98083CB-C97E-4FA0-A4EF-2F523FEFF5E1/b9/579ea6de/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PoolManagerExampleFiles/Scripts/ReallySimpleParticleSpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PoolManagerExampleFiles/Scripts/ReallySimpleAudioSpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/QFramework/Toolkits/PoolKit/Example/CallPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PoolManagerExampleFiles/Scripts/SimpleSpawner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/QFramework/Framework/Examples/ArchitectureExample/Scripts/Event/GameStartEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NewPool/PoolBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PoolManagerExampleFiles/Scripts/OnCreatedDelegateExample.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/QFramework/Toolkits/UIKit/Editor/UIBindInspector.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/QFramework/Framework/Examples/ArchitectureExample/Scripts/Event/GamePassEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PoolManagerExampleFiles/Scripts/InstanceHandlerDelegateExample.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/QFramework/Toolkits/ActionKit/Example/3.CustomAction/CustomActionExample.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PoolManagerExampleFiles/Scripts/ParticleWaitTest.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/QFramework/Framework/Examples/ArchitectureExample/Scripts/Event/OnCountDownEndEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PoolManagerExampleFiles/Scripts/OnSpawnedExample.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/QFramework/Framework/Examples/ArchitectureExample/Scripts/Event/OnMissEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathologicalGames/PoolManager/PreRuntimePoolItem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/QFramework/Toolkits/PackageKit/Editor/MarkdownView/Scripts/Renderer/RendererBlockCode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathologicalGames/PoolManager/SpawnPool.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PoolManagerExampleFiles/Scripts/DeleteAndCreateInSameFrame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/QFramework/Framework/Examples/ArchitectureExample/Scripts/Event/OnEnemyKillEvent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PoolManagerExampleFiles/Scripts/CreationExample.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F98083CB-C97E-4FA0-A4EF-2F523FEFF5E1/b9/579ea6de/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/QFramework/Toolkits/PoolKit/Scripts/PoolKit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathologicalGames/PoolManager/PoolManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NewPool/PoolTest.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/PoolBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/NewPool/PoolBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/NewPool/PoolManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/NewPool/PoolTest.cs" />
       </list>
     </option>
   </component>
@@ -77,10 +81,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="33312">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="33312" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -97,7 +101,7 @@
       <updated>1646365330311</updated>
       <workItem from="1646365332170" duration="2424000" />
       <workItem from="1646380405118" duration="2998000" />
-      <workItem from="1646619416946" duration="7297000" />
+      <workItem from="1646619416946" duration="11961000" />
     </task>
     <servers />
   </component>
@@ -127,6 +131,45 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NewPool/PoolTest.cs</url>
+          <line>51</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/NewPool/PoolTest.cs" initialLine="51">
+            <startOffsets>
+              <option value="1033" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1057" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NewPool/PoolTest.cs</url>
+          <line>56</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/NewPool/PoolTest.cs" initialLine="56">
+            <startOffsets>
+              <option value="1155" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1180" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/NewPool/PoolBase.cs</url>
+          <line>48</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/NewPool/PoolBase.cs" initialLine="48">
+            <startOffsets>
+              <option value="1278" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1295" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
