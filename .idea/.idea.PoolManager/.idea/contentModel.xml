@@ -20,6 +20,9 @@
             </e>
           </e>
         </e>
+        <e p="NewPool" t="Include">
+          <e p="PoolBase.cs" t="Include" />
+        </e>
         <e p="Plugins" t="Include">
           <e p="PathologicalGames" t="Include">
             <e p="PoolManager" t="Include">
@@ -30,7 +33,6 @@
             <e p="readme.txt" t="Include" />
           </e>
         </e>
-        <e p="PoolBase.cs" t="Include" />
         <e p="PoolManagerExampleFiles" t="Include">
           <e p="Scripts" t="Include">
             <e p="CreationExample.cs" t="Include" />

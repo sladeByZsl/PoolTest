@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c450c47-5c0c-4dbb-a48f-17f400981940" name="Default Changelist" comment="" />
+    <list default="true" id="1c450c47-5c0c-4dbb-a48f-17f400981940" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PoolBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PoolBase.cs.meta" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/PoolManagerExampleFiles/Scripts/ReallySimpleParticleSpawner.cs" root0="FORCE_HIGHLIGHTING" />
@@ -18,7 +27,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/QFramework/Toolkits/UIKit/Editor/UIBindInspector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/QFramework/Framework/Examples/ArchitectureExample/Scripts/Event/GamePassEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PoolManagerExampleFiles/Scripts/InstanceHandlerDelegateExample.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PoolBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/QFramework/Toolkits/ActionKit/Example/3.CustomAction/CustomActionExample.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PoolManagerExampleFiles/Scripts/ParticleWaitTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/QFramework/Framework/Examples/ArchitectureExample/Scripts/Event/OnCountDownEndEvent.cs" root0="FORCE_HIGHLIGHTING" />
@@ -34,7 +42,15 @@
     <setting file="file://$PROJECT_DIR$/Assets/QFramework/Toolkits/PoolKit/Scripts/PoolKit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathologicalGames/PoolManager/PoolManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/PoolBase.cs" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="25u7tJ8b8uVlAoEcmxnUPLvhq5k" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
@@ -81,7 +97,7 @@
       <updated>1646365330311</updated>
       <workItem from="1646365332170" duration="2424000" />
       <workItem from="1646380405118" duration="2998000" />
-      <workItem from="1646619416946" duration="6162000" />
+      <workItem from="1646619416946" duration="7297000" />
     </task>
     <servers />
   </component>
@@ -90,6 +106,17 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
   </component>
