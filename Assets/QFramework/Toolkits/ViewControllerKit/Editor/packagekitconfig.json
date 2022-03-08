@@ -1,0 +1,10 @@
+{
+  "AssemblyName": "ViewControllerKit.Editor",
+  "DisplayName": "ViewControllerKit 设置",
+  "TypeName": "QFramework.ViewControllerKitSettingView",
+  "InitFunc": "Init",
+  "OnGUIFunc": "OnGUI",
+  "DisposeFunc": "OnDestroy",
+  "GroupName": "QFramework",
+  "RenderOrder": "1"
+}
