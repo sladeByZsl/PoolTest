@@ -17,6 +17,9 @@
               <e p="TestPrefabEvent.cs" t="Include" />
               <e p="WarGroupExample.cs" t="Include" />
             </e>
+            <e p="Test" t="Include">
+              <e p="TestClassPool.cs" t="Include" />
+            </e>
           </e>
           <e p="Scripts" t="Include">
             <e p="PoolManager" t="Include">

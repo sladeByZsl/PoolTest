@@ -7,18 +7,23 @@ namespace Ihaius
 {
     public class ObjectPool<T> : AbstractObjectPool
     {
-       
-
-
         #region Constructor and Self-Destruction
 
         /** 正在被使用的对象列表 */
         internal List<T> _spawned = new List<T>();
-        public List<T> spawned { get { return new List<T>(this._spawned); } }
+
+        public List<T> spawned
+        {
+            get { return new List<T>(this._spawned); }
+        }
 
         /** 没有被使用的闲置对象列表 */
         internal List<T> _despawned = new List<T>();
-        public List<T> despawned { get { return new List<T>(this._despawned); } }
+
+        public List<T> despawned
+        {
+            get { return new List<T>(this._despawned); }
+        }
 
         /** 对象的总数 = 使用的数量 + 闲置的数量 */
         public int totalCount
@@ -68,8 +73,6 @@ namespace Ihaius
         #endregion Constructor and Self-Destruction
 
 
-
-
         #region Pool Functionality
 
         /// <summary>
@@ -92,7 +95,7 @@ namespace Ihaius
                     Debug.LogWarningFormat(string.Format("[对象池] {0} : 设置闲置对象时,对象已经在闲置列表 {1}",
                         this.name,
                         xform));
-                
+
                 return false;
             }
 
@@ -117,37 +120,38 @@ namespace Ihaius
             ItemSetActive(xform, false);
 
             //确保只开启一次缓存池
-            if (!this.IsStartAutoDestroy &&   
-                this.autoDestroy &&    
-                this.totalCount > this.holdNum)  
+            if (!this.IsStartAutoDestroy &&
+                this.autoDestroy &&
+                this.totalCount > this.holdNum)
             {
                 this.IsStartAutoDestroy = true;
                 this.StartCoroutine(AutoClear());
             }
+
             return true;
         }
 
 
-
         /** 清理闲置对象协程是否启动,为了确保协程只有1个 */
         private bool IsStartAutoDestroy = false;
+
         /** 清理闲置对象协程 */
         internal IEnumerator AutoClear()
         {
             if (this.logMessages)
                 Debug.Log(string.Format("[对象池] {0} :  " +
-                    "触发清理闲置对象,等待{1}秒开始检测despawns...",
+                                        "触发清理闲置对象,等待{1}秒开始检测despawns...",
                     this.name,
                     this.autoDestorySpan));
 
             yield return new WaitForSeconds(this.autoDestorySpan);
 
-            while (this.totalCount > this.holdNum)
+            while (this._despawned.Count > 0&&this.totalCount > this.holdNum)
             {
                 for (int i = 0; i < this.destoryNumPerFrame; i++)
                 {
                     if (this.totalCount <= this.holdNum)
-                        break; 
+                        break;
 
                     if (this._despawned.Count > 0)
                     {
@@ -157,16 +161,18 @@ namespace Ihaius
 
                         if (this.logMessages)
                             Debug.Log(string.Format("[对象池] {0} : " +
-                                "清理数量至{1}个，目前实例对象数量{2}个",
+                                                    "清理数量至{1}个,Active实例数量{2},Deactive实例数量{3},目前实例对象数量{4}个",
                                 this.name,
                                 this.holdNum,
+                                this._spawned.Count,
+                                this._despawned.Count,
                                 this.totalCount));
                     }
                     else if (this.logMessages)
                     {
                         Debug.Log(string.Format("[对象池] {0} : " +
-                            "等待闲置对象，目前闲置对象数量为0。 " +
-                            "等待{1}秒再次次检测",
+                                                "等待闲置对象，目前闲置对象数量为0。 " +
+                                                "等待{1}秒再次次检测",
                             this.name,
                             this.autoDestorySpan));
 
@@ -188,10 +194,6 @@ namespace Ihaius
         }
 
 
-
-
-
-
         /// <summary>
         /// 获取一个实例对象
         /// 如果限制了实例对象数量，且正在使用的对象数量大于限制的数量，且开启了limitFIFO，那么就把_spawned[0]设置为闲置状态
@@ -211,17 +213,15 @@ namespace Ihaius
                 if (this.logMessages)
                 {
                     Debug.Log(string.Format
-                        (
-                            "[对象池] {0} : " +
-                            "限制数量达到上限! FIFO=True. 将第一个被使用对象设置为闲置状态 {1}...",
-                            this.name,
-                            firstIn
-                        ));
+                    (
+                        "[对象池] {0} : " +
+                        "限制数量达到上限! FIFO=True. 将第一个被使用对象设置为闲置状态 {1}...",
+                        this.name,
+                        firstIn
+                    ));
                 }
 
                 this.DespawnInstance(firstIn);
-
-               
             }
 
             T inst;
@@ -255,7 +255,6 @@ namespace Ihaius
 
                 ItemSetArg(inst, args);
                 ItemSetActive(inst, true);
-
             }
 
             //
@@ -266,13 +265,11 @@ namespace Ihaius
         }
 
 
-
         /// <summary>
         /// 创建一个实例对象
         /// 如果限制了实例对象数量，且对象总数大于限制的数量。就返回一个空对象 return null
         /// 否则 实例化一个对象，并检查SpawnPool的设置，对该对象进行设置。最后返回该创建的对象
         /// </summary>
-
         public T SpawnNew(params object[] arg)
         {
             // Handle limiting if the limit was used and reached.
@@ -281,27 +278,26 @@ namespace Ihaius
                 if (this.logMessages)
                 {
                     Debug.Log(string.Format
-                        (
-                            "[对象池] {0} : " +
-                            "实例对象数量达到上限，不能创建新实例。(Returning null)",
-                            this.name
-                        ));
+                    (
+                        "[对象池] {0} : " +
+                        "实例对象数量达到上限，不能创建新实例。(Returning null)",
+                        this.name
+                    ));
                 }
 
                 return default(T);
             }
 
 
-            T inst = (T)Instantiate(arg);
-            this.nameInstance(inst);  // Adds the number to the end
+            T inst = (T) Instantiate(arg);
+            this.nameInstance(inst); // Adds the number to the end
 
-         
 
             // Start tracking the new instance
             this._spawned.Add(inst);
 
             if (this.logMessages)
-                Debug.Log(string.Format( "[对象池] {0} : 创建了一个新对象{1}",
+                Debug.Log(string.Format("[对象池] {0} : 创建了一个新对象{1}",
                     this.name,
                     inst));
 
@@ -316,7 +312,7 @@ namespace Ihaius
         /// <param name="despawn">True to despawn on add</param>
         internal void AddUnpooled(T inst, bool despawn)
         {
-            this.nameInstance(inst);   // Adds the number to the end
+            this.nameInstance(inst); // Adds the number to the end
 
             if (despawn)
             {
@@ -329,7 +325,6 @@ namespace Ihaius
             else
                 this._spawned.Add(inst);
         }
-
 
 
         /// <summary>
@@ -358,7 +353,7 @@ namespace Ihaius
                 (
                     string.Format
                     (
-                        "[对象池] {0} : 你配置的预实例对象数量超过限制数量。强制预实例数量等于限制数量" ,
+                        "[对象池] {0} : 你配置的预实例对象数量超过限制数量。强制预实例数量等于限制数量",
                         this.name
                     )
                 );
@@ -371,17 +366,17 @@ namespace Ihaius
             if (this.autoDestroy && this.preloadAmount > this.holdNum)
             {
                 Debug.LogWarning(string.Format("[对象池] {0} : " +
-                    "你配置的预实例对象数量超过自动清理保留数量，这样很浪费! preloadAmount={1}, holdNum={2}",
+                                               "你配置的预实例对象数量超过自动清理保留数量，这样很浪费! preloadAmount={1}, holdNum={2}",
                     this.name, preloadAmount, holdNum
                 ));
             }
 
-            if (this.preloadTime)
+            if (this.preloadAsync)
             {
                 if (this.preloadFrames > this.preloadAmount)
                 {
                     Debug.LogWarning(string.Format("[对象池] {0} : " +
-                        "每帧预实例数量大于总预实例数量，不合理！ preloadFrames={1}, preloadAmount={2}",
+                                                   "每帧预实例数量大于总预实例数量，不合理！ preloadFrames={1}, preloadAmount={2}",
                         this.name, preloadFrames, preloadAmount
                     ));
 
@@ -465,6 +460,7 @@ namespace Ihaius
         #endregion Pool Functionality
 
         #region Utilities
+
         /// <summary>
         /// 检查是否包含了该对象。spawned、despawned从这两个列表里检查
         /// </summary>
@@ -484,15 +480,14 @@ namespace Ihaius
 
             return false;
         }
-       
+
         #endregion Utilities
-
-
 
 
         #region Instantiate Method
 
         private Type _type;
+
         public Type type
         {
             get
@@ -501,6 +496,7 @@ namespace Ihaius
                 {
                     _type = typeof(T);
                 }
+
                 return _type;
             }
         }
@@ -508,6 +504,7 @@ namespace Ihaius
 
         /** T是否是实现IPoolItem接口 */
         private bool? _IsImplementIPoolItem;
+
         public bool IsImplementIPoolItem
         {
             get
@@ -516,6 +513,7 @@ namespace Ihaius
                 {
                     _IsImplementIPoolItem = typeof(IPoolItem).IsAssignableFrom(type);
                 }
+
                 return _IsImplementIPoolItem.Value;
             }
         }
@@ -523,6 +521,7 @@ namespace Ihaius
 
         /** T是否继承了ScriptableObject */
         private bool? _IsScriptableObject;
+
         public bool IsScriptableObject
         {
             get
@@ -531,6 +530,7 @@ namespace Ihaius
                 {
                     _IsScriptableObject = typeof(ScriptableObject).IsAssignableFrom(type);
                 }
+
                 return _IsScriptableObject.Value;
             }
         }
@@ -538,6 +538,7 @@ namespace Ihaius
 
         /** T是否继承了MonoBehaviour */
         private bool? _IsMonoBehaviour;
+
         public bool IsMonoBehaviour
         {
             get
@@ -546,6 +547,7 @@ namespace Ihaius
                 {
                     _IsMonoBehaviour = typeof(MonoBehaviour).IsAssignableFrom(type);
                 }
+
                 return _IsMonoBehaviour.Value;
             }
         }
@@ -553,6 +555,7 @@ namespace Ihaius
 
         /** T是否是GameObject */
         private bool? _IsGameObject;
+
         public bool IsGameObject
         {
             get
@@ -561,14 +564,15 @@ namespace Ihaius
                 {
                     _IsGameObject = typeof(GameObject).IsAssignableFrom(typeof(T));
                 }
+
                 return _IsGameObject.Value;
             }
         }
 
 
-
         /** T是否是Transform */
         private bool? _IsTransform;
+
         public bool IsTransform
         {
             get
@@ -577,12 +581,10 @@ namespace Ihaius
                 {
                     _IsTransform = typeof(Transform).IsAssignableFrom(typeof(T));
                 }
+
                 return _IsTransform.Value;
             }
         }
-
-
-
 
 
         /** 调用对象方法--销毁 */
@@ -598,7 +600,6 @@ namespace Ihaius
         /** 调用对象方法--设置为闲置状态消息 */
         virtual protected void ItemOnDespawned(T instance)
         {
-
             if (IsImplementIPoolItem)
             {
                 IPoolItem item = (IPoolItem) instance;
@@ -646,7 +647,6 @@ namespace Ihaius
                 IPoolItem item = (IPoolItem) instance;
                 item.PName += (this.totalCount + 1).ToString("#000");
             }
-
         }
 
         /** 实例化一个对象 */
@@ -670,12 +670,13 @@ namespace Ihaius
                 return PoolManager.Instance.StartCoroutine(routine);
             }
         }
+
         #endregion
 
         public override string ToString()
         {
-            return string.Format("[{3}: spawned={0}, despawned={1}, totalCount={2}]", spawned.Count, despawned.Count, totalCount, name);
+            return string.Format("[{3}: spawned={0}, despawned={1}, totalCount={2}]", spawned.Count, despawned.Count,
+                totalCount, name);
         }
-
     }
 }

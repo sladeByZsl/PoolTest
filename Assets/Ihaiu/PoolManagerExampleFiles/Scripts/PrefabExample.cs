@@ -42,7 +42,7 @@ namespace PoolManagerExampleFiles
             // 缓存池这个Prefab的预加载数量。意思为一开始加载的数量！
             pool.preloadAmount = 3;
             // 如果勾选表示缓存池所有的gameobject可以“异步”加载。
-            pool.preloadTime = true;
+            pool.preloadAsync = true;
             // 每几帧加载一个。
             pool.preloadFrames = 2;
             // 延迟多久开始加载。
@@ -116,7 +116,7 @@ namespace PoolManagerExampleFiles
             // 缓存池这个Prefab的预加载数量。意思为一开始加载的数量！
             pool.preloadAmount = 3;
             // 如果勾选表示缓存池所有的gameobject可以“异步”加载。
-            pool.preloadTime = true;
+            pool.preloadAsync = true;
             // 每几帧加载一个。
             pool.preloadFrames = 2;
             // 延迟多久开始加载。

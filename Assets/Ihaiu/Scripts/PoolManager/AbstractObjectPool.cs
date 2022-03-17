@@ -14,7 +14,7 @@ namespace Ihaius
         public int preloadAmount = 1;
 
         /** 如果勾选表示缓存池所有的gameobject可以“异步”加载。*/
-        public bool preloadTime = false;
+        public bool preloadAsync = false;
 
         /** 每几帧加载一个。*/
         public int preloadFrames = 2;
@@ -36,13 +36,13 @@ namespace Ihaius
 
 
         /** 是否开启缓存池智能自动清理模式。*/
-        public bool autoDestroy = false;
+        public bool autoDestroy = true;
 
         /** 缓存池自动清理，但是始终保留几个对象不清理。 */
-        public int holdNum = 50;
+        public int holdNum = 10;
 
         /** 每过多久执行一遍自动清理，单位是秒。从上一次清理过后开始计时 */
-        public int autoDestorySpan = 60;
+        public int autoDestorySpan = 6;
 
         /** 每次自动清理几个游戏对象。 */
         public int destoryNumPerFrame = 5;
