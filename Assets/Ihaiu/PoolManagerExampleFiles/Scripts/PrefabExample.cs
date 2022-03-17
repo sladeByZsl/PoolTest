@@ -57,13 +57,13 @@ namespace PoolManagerExampleFiles
             pool.limitFIFO = true;
 
             // 是否开启缓存池智能自动清理模式
-            pool.cullDespawned = true;
+            pool.autoDestroy = true;
             // 缓存池自动清理，但是始终保留几个对象不清理。
-            pool.cullAbove = 5;
+            pool.holdNum = 5;
             // 每过多久执行一遍自动清理，单位是秒。从上一次清理过后开始计时
-            pool.cullDelay = 2;
+            pool.autoDestorySpan = 2;
             // 每次自动清理几个游戏对象。
-            pool.cullMaxPerPass = 2;
+            pool.destoryNumPerFrame = 2;
 
             // 是否打印日志信息
             pool.logMessages = true;

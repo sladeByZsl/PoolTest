@@ -68,13 +68,13 @@ namespace PoolManagerExampleFiles
             unitDataPool.limitFIFO = true;
 
             // 是否开启缓存池智能自动清理模式
-            unitDataPool.cullDespawned = true;
+            unitDataPool.autoDestroy = true;
             // 缓存池自动清理，但是始终保留几个对象不清理。
-            unitDataPool.cullAbove = 5;
+            unitDataPool.holdNum = 5;
             // 每过多久执行一遍自动清理，单位是秒。从上一次清理过后开始计时
-            unitDataPool.cullDelay = 2;
+            unitDataPool.autoDestorySpan = 2;
             // 每次自动清理几个游戏对象。
-            unitDataPool.cullMaxPerPass = 2;
+            unitDataPool.destoryNumPerFrame = 2;
 
             // 是否打印日志信息
             unitDataPool.logMessages = true;
@@ -133,13 +133,13 @@ namespace PoolManagerExampleFiles
             unitDataPool.limitFIFO = true;
 
             // 是否开启缓存池智能自动清理模式
-            unitDataPool.cullDespawned = false;
+            unitDataPool.autoDestroy = false;
             // 缓存池自动清理，但是始终保留几个对象不清理。
-            unitDataPool.cullAbove = 5;
+            unitDataPool.holdNum = 5;
             // 每过多久执行一遍自动清理，单位是秒。从上一次清理过后开始计时
-            unitDataPool.cullDelay = 2;
+            unitDataPool.autoDestorySpan = 2;
             // 每次自动清理几个游戏对象。
-            unitDataPool.cullMaxPerPass = 2;
+            unitDataPool.destoryNumPerFrame = 2;
 
             // 是否打印日志信息
             unitDataPool.logMessages = true;

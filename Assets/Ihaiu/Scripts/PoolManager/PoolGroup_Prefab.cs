@@ -372,17 +372,6 @@ namespace Ihaius
 
 
         /// <summary>
-        /// See docs for SpawnInstance(ParticleSystems prefab, Vector3 pos, Quaternion rot)
-        /// This is the same but for ParticleEmitters
-        /// 
-        /// IMPORTANT: 
-        ///     * This function turns off Unity's ParticleAnimator autodestruct if
-        ///       one is found.
-        /// </summary>
-      
-
-
-        /// <summary>
         /// If the passed object is managed by the SpawnPool, it will be 
         /// deactivated and made available to be spawned again.
         ///     

@@ -73,7 +73,7 @@ namespace Ihaius
         #region Pool Functionality
 
         /// <summary>
-        /// 设置对象为闲置
+        /// 设置对象为闲置,入池
         /// 将对象xfrom从 _spawned转到_despawned
         /// sendEventMessage=true时会对xfrom对象广播OnDespawned消息
         /// 设置xfrom.gameObejct.SetActive(false)
@@ -116,40 +116,37 @@ namespace Ihaius
             // Deactivate the instance and all children
             ItemSetActive(xform, false);
 
-            // Trigger culling if the feature is ON and the size  of the 
-            //   overall pool is over the Cull Above threashold.
-            //   This is triggered here because Despawn has to occur before
-            //   it is worth culling anyway, and it is run fairly often.
-            if (!this.cullingActive &&   // Cheap & Singleton. Only trigger once!
-                this.cullDespawned &&    // Is the feature even on? Cheap too.
-                this.totalCount > this.cullAbove)   // Criteria met?
+            //确保只开启一次缓存池
+            if (!this.IsStartAutoDestroy &&   
+                this.autoDestroy &&    
+                this.totalCount > this.holdNum)  
             {
-                this.cullingActive = true;
-                this.StartCoroutine(CullDespawned());
+                this.IsStartAutoDestroy = true;
+                this.StartCoroutine(AutoClear());
             }
             return true;
         }
 
 
 
-        /** 清理闲置对象协程是否启动 */
-        private bool cullingActive = false;
+        /** 清理闲置对象协程是否启动,为了确保协程只有1个 */
+        private bool IsStartAutoDestroy = false;
         /** 清理闲置对象协程 */
-        internal IEnumerator CullDespawned()
+        internal IEnumerator AutoClear()
         {
             if (this.logMessages)
                 Debug.Log(string.Format("[对象池] {0} :  " +
                     "触发清理闲置对象,等待{1}秒开始检测despawns...",
                     this.name,
-                    this.cullDelay));
+                    this.autoDestorySpan));
 
-            yield return new WaitForSeconds(this.cullDelay);
+            yield return new WaitForSeconds(this.autoDestorySpan);
 
-            while (this.totalCount > this.cullAbove)
+            while (this.totalCount > this.holdNum)
             {
-                for (int i = 0; i < this.cullMaxPerPass; i++)
+                for (int i = 0; i < this.destoryNumPerFrame; i++)
                 {
-                    if (this.totalCount <= this.cullAbove)
+                    if (this.totalCount <= this.holdNum)
                         break; 
 
                     if (this._despawned.Count > 0)
@@ -162,7 +159,7 @@ namespace Ihaius
                             Debug.Log(string.Format("[对象池] {0} : " +
                                 "清理数量至{1}个，目前实例对象数量{2}个",
                                 this.name,
-                                this.cullAbove,
+                                this.holdNum,
                                 this.totalCount));
                     }
                     else if (this.logMessages)
@@ -171,22 +168,22 @@ namespace Ihaius
                             "等待闲置对象，目前闲置对象数量为0。 " +
                             "等待{1}秒再次次检测",
                             this.name,
-                            this.cullDelay));
+                            this.autoDestorySpan));
 
                         break;
                     }
                 }
 
                 // Check again later
-                yield return new WaitForSeconds(this.cullDelay);
+                yield return new WaitForSeconds(this.autoDestorySpan);
             }
 
             if (this.logMessages)
                 Debug.Log(string.Format("[对象池] {0} : 清理闲置对象完成!停止该协程!",
                     this.name));
 
-            // Reset the singleton so the feature can be used again if needed.
-            this.cullingActive = false;
+            //关闭自动清理
+            this.IsStartAutoDestroy = false;
             yield return null;
         }
 
@@ -313,7 +310,7 @@ namespace Ihaius
 
 
         /// <summary>
-        /// 将以个势力对象添加到缓存池。 despawn=true时就加到_despwan闲置列表，并设置gameObject.active=false；否则就加到_spawn正在被使用列表
+        /// 将一个实例对象添加到缓存池。 despawn=true时就加到_despwan闲置列表，并设置gameObject.active=false；否则就加到_spawn正在被使用列表
         /// </summary>
         /// <param name="inst">The instance to add</param>
         /// <param name="despawn">True to despawn on add</param>
@@ -371,11 +368,11 @@ namespace Ihaius
 
             // Notify the user if they made a mistake using Culling
             //   (First check is cheap)
-            if (this.cullDespawned && this.preloadAmount > this.cullAbove)
+            if (this.autoDestroy && this.preloadAmount > this.holdNum)
             {
                 Debug.LogWarning(string.Format("[对象池] {0} : " +
-                    "你配置的预实例对象数量超过自动清理保留数量，这样很浪费! preloadAmount={1}, cullAbove={2}",
-                    this.name, preloadAmount, cullAbove
+                    "你配置的预实例对象数量超过自动清理保留数量，这样很浪费! preloadAmount={1}, holdNum={2}",
+                    this.name, preloadAmount, holdNum
                 ));
             }
 

@@ -3,14 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="1c450c47-5c0c-4dbb-a48f-17f400981940" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scenes/ClassExampleSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scenes/ClassExampleSettings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scenes/ItemExampleSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scenes/ItemExampleSettings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scenes/PrefabExampleSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scenes/PrefabExampleSettings.lighting.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scenes/WarGroupExampleSettings.lighting" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scenes/WarGroupExampleSettings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/ClassExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/ClassExample.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/PrefabExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/PrefabExample.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/AbstractObjectPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/AbstractObjectPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ObjectPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ObjectPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup_Prefab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup_Prefab.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PoolManager.sln" beforeDir="false" afterPath="$PROJECT_DIR$/PoolManager.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,9 +25,12 @@
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup_Prefab.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F98083CB-C97E-4FA0-A4EF-2F523FEFF5E1/91/03e3ad3b/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/AbstractObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ScriptableObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F98083CB-C97E-4FA0-A4EF-2F523FEFF5E1/42/22280516/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F98083CB-C97E-4FA0-A4EF-2F523FEFF5E1/b9/579ea6de/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PrefabPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/IPoolItem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -38,6 +40,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/PrefabExample.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NewPool/PoolBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/TestPrefabEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A92AD44-406B-4318-9677-3A464E9EC96E/c3/b1749229/Type.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/WarGroupExample.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/PoolGroupDict_Game.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathologicalGames/PoolManager/PreRuntimePoolItem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -52,6 +55,8 @@
         <option value="$PROJECT_DIR$/Assets/NewPool/PoolBase.cs" />
         <option value="$PROJECT_DIR$/Assets/NewPool/PoolManager.cs" />
         <option value="$PROJECT_DIR$/Assets/NewPool/PoolTest.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/AbstractObjectPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ObjectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup_Prefab.cs" />
       </list>
     </option>
@@ -104,7 +109,9 @@
       <updated>1646365330311</updated>
       <workItem from="1646365332170" duration="2424000" />
       <workItem from="1646380405118" duration="2998000" />
-      <workItem from="1646619416946" duration="12991000" />
+      <workItem from="1646619416946" duration="14819000" />
+      <workItem from="1646881240330" duration="8312000" />
+      <workItem from="1647327825684" duration="6288000" />
     </task>
     <servers />
   </component>
@@ -118,7 +125,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -134,32 +143,6 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NewPool/PoolTest.cs</url>
-          <line>51</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/NewPool/PoolTest.cs" initialLine="51">
-            <startOffsets>
-              <option value="1033" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1057" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/NewPool/PoolTest.cs</url>
-          <line>56</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/NewPool/PoolTest.cs" initialLine="56">
-            <startOffsets>
-              <option value="1155" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1180" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
