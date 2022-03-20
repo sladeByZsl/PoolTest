@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Administrator\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Administrator\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_PoolTest.727697133.00" t="ExcludeRecursive" />
+    <e p="D:\project\PoolTest" t="IncludeRecursive">
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Ihaiu" t="Include">
+          <e p="PoolManagerExampleFiles" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="ClassExample.cs" t="Include" />
+              <e p="ItemExample.cs" t="Include" />
+              <e p="PoolGroupDict_Game.cs" t="Include" />
+              <e p="PrefabExample.cs" t="Include" />
+              <e p="TestPrefabEvent.cs" t="Include" />
+              <e p="WarGroupExample.cs" t="Include" />
+            </e>
+            <e p="Test" t="Include">
+              <e p="TestClassPool.cs" t="Include" />
+              <e p="TestCompomentPool.cs" t="Include" />
+              <e p="TestMono.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="PoolManager" t="Include">
+              <e p="AbstractObjectPool.cs" t="Include" />
+              <e p="ComponentPool.cs" t="Include" />
+              <e p="IPoolItem.cs" t="Include" />
+              <e p="ObjectPool.cs" t="Include" />
+              <e p="PoolGroup.cs" t="Include" />
+              <e p="PoolGroup_Component.cs" t="Include" />
+              <e p="PoolGroup_Prefab.cs" t="Include" />
+              <e p="PoolGroupDict.cs" t="Include" />
+              <e p="PoolManager.cs" t="Include" />
+              <e p="PrefabPool.cs" t="Include" />
+              <e p="ScriptableObjectPool.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="NewPool" t="Include">
+          <e p="PoolBase.cs" t="Include" />
+          <e p="PoolManager.cs" t="Include" />
+          <e p="PoolTest.cs" t="Include" />
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="PathologicalGames" t="Include">
+            <e p="PoolManager" t="Include">
+              <e p="PoolManager.cs" t="Include" />
+              <e p="PreRuntimePoolItem.cs" t="Include" />
+              <e p="SpawnPool.cs" t="Include" />
+            </e>
+            <e p="readme.txt" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="PoolTest.sln" t="IncludeFlat" />
+      <e p="Temp\Bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
