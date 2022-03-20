@@ -43,7 +43,7 @@ namespace Ihaius
             }
 
             prefabPool.inspectorInstanceConstructor();
-            if (prefabPool.preloaded != true)
+            if (prefabPool.preloaded)
             {
                 if (this.logMessages)
                     Debug.Log(string.Format("PoolGroup {0}: 预实例化对象中 preloadAmount={1} {2}",

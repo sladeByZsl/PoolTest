@@ -80,7 +80,7 @@ namespace PoolManagerExampleFiles
             unitDataPool.logMessages = true;
 
 
-            PoolManager.groups.common.CreatePool<UnitData>(unitDataPool);
+            PoolManager.instance.common.CreatePool<UnitData>(unitDataPool);
             status = "Init";
 
             yield return new WaitForSeconds(5);
@@ -88,7 +88,7 @@ namespace PoolManagerExampleFiles
             status = "Spawn ";
             for(int j = 0; j < 10; j ++)
             {
-                UnitData unitData = PoolManager.groups.common.Spawn<UnitData>();
+                UnitData unitData = PoolManager.instance.common.Spawn<UnitData>();
                 unitDatas.Add(unitData);
                 Debug.LogFormat("[Spawn] {0}, {1}" , j, unitData);
                 Debug.Log(unitDataPool);
@@ -102,7 +102,7 @@ namespace PoolManagerExampleFiles
             for(int j = unitDatas.Count - 1; j >= 0; j --)
             {
                 UnitData unitData = unitDatas[j];
-                PoolManager.groups.common.Despawn<UnitData>(unitData);
+                PoolManager.instance.common.Despawn<UnitData>(unitData);
                 Debug.Log(unitDataPool);
                 status = "Despawn " + j;
                 current =unitData != null ?  unitData.ToString() : "null";
@@ -145,7 +145,7 @@ namespace PoolManagerExampleFiles
             unitDataPool.logMessages = true;
 
 
-            PoolManager.groups.common.CreatePool<UnitData>(unitDataPool);
+            PoolManager.instance.common.CreatePool<UnitData>(unitDataPool);
             status = "Init";
 
             yield return new WaitForSeconds(5);
@@ -155,7 +155,7 @@ namespace PoolManagerExampleFiles
                 status = "Spawn ";
                 for(int j = 0; j < 10; j ++)
                 {
-                    UnitData unitData = PoolManager.groups.common.Spawn<UnitData>();
+                    UnitData unitData = PoolManager.instance.common.Spawn<UnitData>();
                     unitDatas.Add(unitData);
                     Debug.LogFormat("[Spawn] {0}, {1}" , j, unitData);
                     Debug.Log(unitDataPool);
@@ -170,7 +170,7 @@ namespace PoolManagerExampleFiles
                 for(int j = unitDatas.Count - 1; j >= 0; j --)
                 {
                     UnitData unitData = unitDatas[j];
-                    PoolManager.groups.common.Despawn<UnitData>(unitData);
+                    PoolManager.instance.common.Despawn<UnitData>(unitData);
                     Debug.Log(unitDataPool);
                     status = "Despawn " + j;
                     current =unitData != null ?  unitData.ToString() : "null";
@@ -200,7 +200,7 @@ namespace PoolManagerExampleFiles
             unitDataPool.logMessages = true;
 
 
-            PoolManager.groups.common.CreatePool<UnitData>(unitDataPool);
+            PoolManager.instance.common.CreatePool<UnitData>(unitDataPool);
             status = "Init";
 
             yield return new WaitForSeconds(5);
@@ -210,7 +210,7 @@ namespace PoolManagerExampleFiles
                 status = "Spawn ";
                 for(int j = 0; j < 10; j ++)
                 {
-                    UnitData unitData = PoolManager.groups.common.Spawn<UnitData>();
+                    UnitData unitData = PoolManager.instance.common.Spawn<UnitData>();
                     unitDatas.Add(unitData);
                     Debug.LogFormat("[Spawn] {0}, {1}" , j, unitData);
                     Debug.Log(unitDataPool);
@@ -225,7 +225,7 @@ namespace PoolManagerExampleFiles
                 for(int j = unitDatas.Count - 1; j >= 0; j --)
                 {
                     UnitData unitData = unitDatas[j];
-                    PoolManager.groups.common.Despawn<UnitData>(unitData);
+                    PoolManager.instance.common.Despawn<UnitData>(unitData);
                     Debug.Log(unitDataPool);
                     status = "Despawn " + j;
                     current =unitData != null ?  unitData.ToString() : "null";

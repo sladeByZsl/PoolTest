@@ -43,7 +43,7 @@ public class WarGroupExample : MonoBehaviour {
     public IEnumerator TestCache()
     {
 
-        group = PoolManager.groups.Create("WarPoolGroup");
+        group = PoolManager.instance.Create("WarPoolGroup");
 
 
 

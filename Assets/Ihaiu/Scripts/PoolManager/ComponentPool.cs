@@ -13,19 +13,23 @@ namespace Ihaius
         public bool matchPoolLayer = false;
 
         public Transform parent;
-        public Transform prefab;
+        
         private GameObject _prefabGO;
+        public T prefabComp;
         internal GameObject prefabGO
         {
             get
             {
                 if (_prefabGO == null)
                 {
-                    _prefabGO = prefab.gameObject;
+                    _prefabGO = new GameObject("Component_templete_"+typeof(T));
+                    _prefabGO.SetActive(false);
+                    prefabComp=_prefabGO.AddComponent<T>();
                 }
                 return _prefabGO;
             }
         }
+
         private bool _dontDestroyOnLoad;
         public bool dontDestroyOnLoad
         {
@@ -46,13 +50,13 @@ namespace Ihaius
         internal override void inspectorInstanceConstructor()
         {
             base.inspectorInstanceConstructor();
-
-            _prefabGO = prefab.gameObject;
-
+            
             if (parent == null)
             {
                 parent = new GameObject(prefabGO.name.Replace("(Clone)", "") + "Pool").transform;
             }
+
+            prefabGO.transform.parent = parent;
 
             if (dontDestroyOnLoad)
             {
@@ -60,19 +64,16 @@ namespace Ihaius
             }
         }
 
-
         internal override void SelfDestruct()
         {
             base.SelfDestruct();
             if (parent != null)
             {
-                GameObject.Destroy(parent.gameObject);
+                Object.Destroy(parent.gameObject);
             }
         }
 
-
-
-
+        
         /** 调用对象方法--销毁 */
         protected override void ItemDestruct(T instance)
         {

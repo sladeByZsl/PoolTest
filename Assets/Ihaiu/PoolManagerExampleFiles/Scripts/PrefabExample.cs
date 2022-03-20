@@ -69,7 +69,7 @@ namespace PoolManagerExampleFiles
             pool.logMessages = true;
 
 
-            PoolManager.groups.common.CreatePool(pool);
+            PoolManager.instance.common.CreatePool(pool);
             status = "Init";
 
             yield return new WaitForSeconds(5);
@@ -79,7 +79,7 @@ namespace PoolManagerExampleFiles
                 status = "Spawn ";
                 for(int j = 0; j < 10; j ++)
                 {
-                    Transform item = PoolManager.groups.common.Spawn(prefab);
+                    Transform item = PoolManager.instance.common.Spawn(prefab);
                     item.position = Vector3.forward * (j + 0.5f);
                     list.Add(item);
                     Debug.LogFormat("[Spawn] {0}, {1}" , j, item);
@@ -95,7 +95,7 @@ namespace PoolManagerExampleFiles
                 for(int j = list.Count - 1; j >= 0; j --)
                 {
                     Transform item = list[j];
-                    PoolManager.groups.common.Despawn(item);
+                    PoolManager.instance.common.Despawn(item);
                     Debug.Log(pool);
                     status = "Despawn " + j;
                     current =item;
@@ -128,7 +128,7 @@ namespace PoolManagerExampleFiles
             pool.logMessages = true;
 
 
-            PoolManager.groups.common.CreatePool(pool);
+            PoolManager.instance.common.CreatePool(pool);
             status = "Init";
 
             yield return new WaitForSeconds(5);
@@ -138,7 +138,7 @@ namespace PoolManagerExampleFiles
                 status = "Spawn ";
                 for(int j = 0; j < 10; j ++)
                 {
-                    Transform item = PoolManager.groups.common.Spawn(prefab);
+                    Transform item = PoolManager.instance.common.Spawn(prefab);
                     item.position = Vector3.forward * (j + 0.5f);
                     list.Add(item);
                     Debug.LogFormat("[Spawn] {0}, {1}" , j, item);
@@ -154,7 +154,7 @@ namespace PoolManagerExampleFiles
                 for(int j = list.Count - 1; j >= 0; j --)
                 {
                     Transform item = list[j];
-                    PoolManager.groups.common.Despawn(item);
+                    PoolManager.instance.common.Despawn(item);
                     Debug.Log(pool);
                     status = "Despawn " + j;
                     current =item;

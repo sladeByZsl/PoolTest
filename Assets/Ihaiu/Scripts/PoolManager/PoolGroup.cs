@@ -47,7 +47,7 @@ namespace Ihaius
             if (this.logMessages)
                 Debug.Log(string.Format("PoolGroup {0}: Initializing..", this.groupName));
 
-            PoolManager.groups.Add(this);
+            PoolManager.instance.Add(this);
         }
 
         public void Destroy()
@@ -60,7 +60,7 @@ namespace Ihaius
             if (this.logMessages)
                 Debug.Log(string.Format("PoolGroup {0}: Destroying...", this.groupName));
 
-            PoolManager.groups.Remove(this);
+            PoolManager.instance.Remove(this);
 
             this.StopAllCoroutines();
 
@@ -90,7 +90,7 @@ namespace Ihaius
 
             objectPool.inspectorInstanceConstructor();
             // Preloading (uses a singleton bool to be sure this is only done once)
-            if (objectPool.preloaded != true)
+            if (objectPool.preloaded)
             {
                 if (this.logMessages)
                     Debug.Log(string.Format("PoolGroup {0}: 预实例化对象中 preloadAmount={1},  {2}",

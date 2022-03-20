@@ -8,7 +8,7 @@ namespace Ihaius
     public class PoolManager : MonoBehaviour
     {
         /** PoolGroup字典 */
-        public static PoolGroupDict groups = new PoolGroupDict();
+        public static PoolGroupDict instance = new PoolGroupDict();
 
 
         private static PoolManager _instance;
