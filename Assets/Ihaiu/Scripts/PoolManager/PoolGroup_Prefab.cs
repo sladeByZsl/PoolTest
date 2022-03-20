@@ -261,120 +261,11 @@ namespace Ihaius
             Transform prefab = this.prefabs[prefabName];
             return this.Spawn(prefab, pos, rot, parent);
         }
-
-
-        public AudioSource Spawn(AudioSource prefab,
-            Vector3 pos, Quaternion rot)
-        {
-            return this.Spawn(prefab, pos, rot, null);  // parent = null
-        }
-
-
-        public AudioSource Spawn(AudioSource prefab)
-        {
-            return this.Spawn
-                (
-                    prefab, 
-                    Vector3.zero, Quaternion.identity,
-                    null  // parent = null
-                );
-        }
-
-
-        public AudioSource Spawn(AudioSource prefab, Transform parent)
-        {
-            return this.Spawn
-                (
-                    prefab, 
-                    Vector3.zero, 
-                    Quaternion.identity,
-                    parent
-                );
-        }
-
-
-        public AudioSource Spawn(AudioSource prefab,
-            Vector3 pos, Quaternion rot,
-            Transform parent)
-        {
-            // Instance using the standard method before doing particle stuff
-            Transform inst = Spawn(prefab.transform, pos, rot, parent);
-
-            // Can happen if limit was used
-            if (inst == null) return null;
-
-            // Get the emitter and start it
-            var src = inst.GetComponent<AudioSource>();
-            src.Play();
-
-            this.StartCoroutine(this.ListForAudioStop(src));
-
-            return src;
-        }
-
-
-        /// <summary>
-        /// See docs for SpawnInstance(Transform prefab, Vector3 pos, Quaternion rot)
-        /// for basic functionalty information.
-        ///     
-        /// Pass a ParticleSystem component of a prefab to instantiate, trigger 
-        /// emit, then listen for when all particles have died to "auto-destruct", 
-        /// but instead of destroying the game object it will be deactivated and 
-        /// added to the pool to be reused.
-        /// 
-        /// IMPORTANT: 
-        ///     * You must pass a ParticleSystem next time as well, or the emitter
-        ///       will be treated as a regular prefab and simply activate, but emit
-        ///       will not be triggered!
-        ///     * The listner that waits for the death of all particles will 
-        ///       time-out after a set number of seconds and log a warning. 
-        ///       This is done to keep the developer aware of any unexpected 
-        ///       usage cases. Change the public property "maxParticleDespawnTime"
-        ///       to adjust this length of time.
-        /// 
-        /// Broadcasts "OnSpawned" to the instance. Use this instead of Awake()
-        ///     
-        /// This function has the same initial signature as Unity's Instantiate() 
-        /// that takes position and rotation. The return Type is different though.
-        /// </summary>
-        public ParticleSystem Spawn(ParticleSystem prefab,
-            Vector3 pos, Quaternion rot)
-        {
-            return Spawn(prefab, pos, rot, null);  // parent = null
-
-        }
-
-        /// <summary>
-        /// See primary Spawn ParticleSystem method for documentation.
-        /// 
-        /// Convienince overload to take only a prefab name and parent the new 
-        /// instance under the given parent. An instance will be set to the passed 
-        /// position and rotation.
-        /// </summary>
-        public ParticleSystem Spawn(ParticleSystem prefab,
-            Vector3 pos, Quaternion rot,
-            Transform parent)
-        {
-            // Instance using the standard method before doing particle stuff
-            Transform inst = this.Spawn(prefab.transform, pos, rot, parent);
-
-            // Can happen if limit was used
-            if (inst == null) return null;
-
-            // Get the emitter and start it
-            var emitter = inst.GetComponent<ParticleSystem>();
-            //emitter.Play(true);  // Seems to auto-play on activation so this may not be needed
-
-            this.StartCoroutine(this.ListenForEmitDespawn(emitter));
-
-            return emitter;
-        }
-
+        
 
         /// <summary>
         /// If the passed object is managed by the SpawnPool, it will be 
         /// deactivated and made available to be spawned again.
-        ///     
         /// Despawned instances are removed from the primary list.
         /// </summary>
         /// <param name="item">The transform of the gameobject to process</param>
@@ -418,7 +309,6 @@ namespace Ihaius
 
         /// <summary>
         /// See docs for Despawn(Transform instance) for basic functionalty information.
-        ///     
         /// Convienince overload to provide the option to re-parent for the instance 
         /// just before despawn.
         /// </summary>
@@ -505,27 +395,6 @@ namespace Ihaius
 
 
         #region Utility Functions
-        /// <summary>
-        /// Returns the prefab pool for a given prefab.
-        /// </summary>
-        /// <param name="prefab">The Transform of an instance</param>
-        /// <returns>PrefabPool</returns>
-        public PrefabPool GetPool(Transform prefab)
-        {
-            for (int i = 0; i < this._prefabPools.Count; i++)
-            {
-                if (this._prefabPools[i].prefabGO == null)
-                    Debug.LogError(string.Format("SpawnPool {0}: PrefabPool.prefabGO is null",
-                        this.groupName));
-
-                if (this._prefabPools[i].prefabGO == prefab.gameObject)
-                    return this._prefabPools[i];
-            }
-
-            // Nothing found
-            return null;
-        }
-
 
         /// <summary>
         /// Returns the prefab pool for a given prefab.
@@ -553,23 +422,6 @@ namespace Ihaius
         /// Returns the prefab used to create the passed instance. 
         /// This is provided for convienince as Unity doesn't offer this feature.
         /// </summary>
-        /// <param name="instance">The Transform of an instance</param>
-        /// <returns>Transform</returns>
-        public Transform GetPrefab(Transform instance)
-        {
-            for (int i = 0; i < this._prefabPools.Count; i++)
-                if (this._prefabPools[i].Contains(instance))
-                    return this._prefabPools[i].prefab;
-
-            // Nothing found
-            return null;
-        }
-
-
-        /// <summary>
-        /// Returns the prefab used to create the passed instance. 
-        /// This is provided for convienince as Unity doesn't offer this feature.
-        /// </summary>
         /// <param name="instance">The GameObject of an instance</param>
         /// <returns>GameObject</returns>
         public GameObject GetPrefab(GameObject instance)
@@ -580,61 +432,6 @@ namespace Ihaius
 
             // Nothing found
             return null;
-        }
-
-
-        private IEnumerator ListForAudioStop(AudioSource src)
-        {
-            // Safer to wait a frame before testing if playing.
-            yield return null;
-
-            while (src.isPlaying)
-                yield return null;
-
-            this.Despawn(src.transform);
-        }
-
-
-      
-
-        // ParticleSystem (Shuriken) Version...
-        private IEnumerator ListenForEmitDespawn(ParticleSystem emitter)
-        {
-            // Wait for the delay time to complete
-            // Waiting the extra frame seems to be more stable and means at least one 
-            //  frame will always pass
-            yield return new WaitForSeconds(emitter.startDelay + 0.25f);
-
-            // Do nothing until all particles die or the safecount hits a max value
-            float safetimer = 0;   // Just in case! See Spawn() for more info
-            while (emitter.IsAlive(true))
-            {
-                if (!emitter.gameObject.activeInHierarchy)
-                {
-                    emitter.Clear(true);
-                    yield break;  // Do nothing, already despawned. Quit.
-                }
-
-                safetimer += Time.deltaTime;
-                if (safetimer > this.maxParticleDespawnTime)
-                    Debug.LogWarning
-                    (
-                        string.Format
-                        (
-                            "SpawnPool {0}: " +
-                            "Timed out while listening for all particles to die. " +
-                            "Waited for {1}sec.",
-                            this.groupName,
-                            this.maxParticleDespawnTime
-                        )
-                    );
-
-                yield return null;
-            }
-
-            // Turn off emit before despawning
-            //emitter.Clear(true);
-            this.Despawn(emitter.transform);
         }
 
         #endregion Utility Functions

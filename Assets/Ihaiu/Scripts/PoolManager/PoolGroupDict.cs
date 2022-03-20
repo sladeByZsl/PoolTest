@@ -9,8 +9,7 @@ namespace Ihaius
         #region Event Handling
         public delegate void OnCreatedDelegate(PoolGroup poolGroup);
 
-        internal Dictionary<string, OnCreatedDelegate> onCreatedDelegates = 
-            new Dictionary<string, OnCreatedDelegate>();
+        internal Dictionary<string, OnCreatedDelegate> onCreatedDelegates = new Dictionary<string, OnCreatedDelegate>();
         /** 添加监听创建PoolGroup */
         public void AddOnCreatedDelegate(string groupName, OnCreatedDelegate createdDelegate)
         {
@@ -77,35 +76,6 @@ namespace Ihaius
             return poolGroup;
         }
 
-        private bool assertValidGroupName(string groupName)
-        {
-            // Cannot request a name with the word "Pool" in it. This would be a 
-            //   rundundant naming convention and is a reserved word for GameObject
-            //   defaul naming
-            string tmpGroupName;
-            tmpGroupName = groupName.Replace("Pool", "");
-            if (tmpGroupName != groupName)  // Warn if "Pool" was used in poolName
-            {
-                // Log a warning and continue on with the fixed name
-                string msg = string.Format("'{0}' has the word 'Pool' in it. " +
-                    "This word is reserved for GameObject defaul naming. " +
-                    "The pool name has been changed to '{1}'",
-                    groupName, tmpGroupName);
-
-                Debug.LogWarning(msg);
-                groupName = tmpGroupName;
-            }
-
-            if (this.ContainsKey(groupName))
-            {
-                Debug.Log(string.Format("A pool with the name '{0}' already exists",
-                    groupName));
-                return false;
-            }
-
-            return true;
-        }
-
         internal void Add(PoolGroup group)
         {
             // Don't let two pools with the same name be added. See error below for details
@@ -135,8 +105,6 @@ namespace Ihaius
             this._groups.Remove(group.groupName);
             return true;
         }
-
-
 
         #region Dict Functionality
         public int Count { get { return this._groups.Count; } }
