@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-namespace com.elex.Pool
+namespace ELEX.NewPool
 {
     public class ObjectPool<T> : AbstractObjectPool
     {
@@ -47,6 +47,9 @@ namespace com.elex.Pool
                 return count;
             }
         }
+
+        private bool triggerAutoClear=false;
+        private float lastClearTime = 0;
 
         public ObjectPool()
         {
@@ -119,91 +122,21 @@ namespace com.elex.Pool
             this._spawned.Remove(xform);
             this._despawned.Add(xform);
 
-            // Notify poolGroupDict of event OnDespawned for custom code additions.
-            //   This is done before handling the deactivate and enqueue incase 
-            //   there the user introduces an unforseen issue.
-            if (sendEventMessage)
-            {
-                ItemOnDespawned(xform);
-            }
-
             // Deactivate the poolGroupDict and all children
             ItemSetActive(xform, false);
 
-            //确保只开启一次缓存池
-            if (!this.IsStartAutoDestroy &&
+            //确保只开启一次自动清理
+            if (!this.triggerAutoClear &&
                 this.autoDestroy &&
                 this.totalCount > this.holdNum)
             {
-                this.IsStartAutoDestroy = true;
-                this.StartCoroutine(AutoClear());
+                this.triggerAutoClear = true;
+                this.lastClearTime = Time.realtimeSinceStartup;
             }
 
             return true;
         }
-
-
-        /** 清理闲置对象协程是否启动,为了确保协程只有1个 */
-        private bool IsStartAutoDestroy = false;
-
-        /** 清理闲置对象协程 */
-        internal IEnumerator AutoClear()
-        {
-            if (this.logMessages)
-                Debug.Log(string.Format("[对象池] {0} :  " +
-                                        "触发清理闲置对象,等待{1}秒开始检测despawns...",
-                    this.name,
-                    this.autoDestorySpan));
-
-            yield return new WaitForSeconds(this.autoDestorySpan);
-
-            while (this._despawned.Count > 0&&this.totalCount > this.holdNum)
-            {
-                for (int i = 0; i < this.destoryNumPerFrame; i++)
-                {
-                    if (this.totalCount <= this.holdNum)
-                        break;
-
-                    if (this._despawned.Count > 0)
-                    {
-                        T inst = this._despawned[0];
-                        this._despawned.RemoveAt(0);
-                        ItemDestruct(inst);
-
-                        if (this.logMessages)
-                            Debug.Log(string.Format("[对象池] {0} : " +
-                                                    "清理数量至{1}个,Active实例数量{2},Deactive实例数量{3},目前实例对象数量{4}个",
-                                this.name,
-                                this.holdNum,
-                                this._spawned.Count,
-                                this._despawned.Count,
-                                this.totalCount));
-                    }
-                    else if (this.logMessages)
-                    {
-                        Debug.Log(string.Format("[对象池] {0} : " +
-                                                "等待闲置对象，目前闲置对象数量为0。 " +
-                                                "等待{1}秒再次次检测",
-                            this.name,
-                            this.autoDestorySpan));
-
-                        break;
-                    }
-                }
-
-                // Check again later
-                yield return new WaitForSeconds(this.autoDestorySpan);
-            }
-
-            if (this.logMessages)
-                Debug.Log(string.Format("[对象池] {0} : 清理闲置对象完成!停止该协程!",
-                    this.name));
-
-            //关闭自动清理
-            this.IsStartAutoDestroy = false;
-            yield return null;
-        }
-
+        
 
         /// <summary>
         /// 获取一个实例对象
@@ -304,7 +237,7 @@ namespace com.elex.Pool
             this.nameInstance(inst); // Adds the number to the end
 
 
-            // Start tracking the new poolGroupDict
+            // OnStart tracking the new poolGroupDict
             this._spawned.Add(inst);
 
             if (this.logMessages)
@@ -313,159 +246,6 @@ namespace com.elex.Pool
                     inst));
 
             return inst;
-        }
-
-
-        /// <summary>
-        /// 将一个实例对象添加到缓存池。 despawn=true时就加到_despwan闲置列表，并设置gameObject.active=false；否则就加到_spawn正在被使用列表
-        /// </summary>
-        /// <param name="inst">The poolGroupDict to add</param>
-        /// <param name="despawn">True to despawn on add</param>
-        internal void AddUnpooled(T inst, bool despawn)
-        {
-            this.nameInstance(inst); // Adds the number to the end
-
-            if (despawn)
-            {
-                // Deactivate the poolGroupDict and all children
-                ItemSetActive(inst, false);
-
-                // Start Tracking as despawned
-                this._despawned.Add(inst);
-            }
-            else
-                this._spawned.Add(inst);
-        }
-
-
-        /// <summary>
-        /// 如果开启异步预实例对象，就开启延迟异步预实例化对象协程。如果每帧预实例化数量大于预实例化数量preloadFrames > preloadAmount，
-        /// 那么就设置每帧预实例化数量等于预实例化数量preloadFrames preloadAmount
-        /// </summary>
-        /// <returns></returns>
-        internal void PreloadInstances()
-        {
-            // If this has already been run for this PrefabPool, there is something
-            //   wrong!
-            if (this.preloaded)
-            {
-                Debug.Log(string.Format("[对象池] {0} : 已经预实例化过，你不能预实例化两次.",
-                    this.name));
-
-                return;
-            }
-
-
-            // Protect against preloading more than the limit amount setting
-            //   This prevents an infinite loop on load if FIFO is used.
-            if (this.limitInstances && this.preloadAmount > this.limitAmount)
-            {
-                Debug.LogWarning
-                (
-                    string.Format
-                    (
-                        "[对象池] {0} : 你配置的预实例对象数量超过限制数量。强制预实例数量等于限制数量",
-                        this.name
-                    )
-                );
-
-                this.preloadAmount = this.limitAmount;
-            }
-
-            // Notify the user if they made a mistake using Culling
-            //   (First check is cheap)
-            if (this.autoDestroy && this.preloadAmount > this.holdNum)
-            {
-                Debug.LogWarning(string.Format("[对象池] {0} : " +
-                                               "你配置的预实例对象数量超过自动清理保留数量，这样很浪费! preloadAmount={1}, holdNum={2}",
-                    this.name, preloadAmount, holdNum
-                ));
-            }
-
-            if (this.preloadAsync)
-            {
-                if (this.preloadFrames > this.preloadAmount)
-                {
-                    Debug.LogWarning(string.Format("[对象池] {0} : " +
-                                                   "每帧预实例数量大于总预实例数量，不合理！ preloadFrames={1}, preloadAmount={2}",
-                        this.name, preloadFrames, preloadAmount
-                    ));
-
-                    this.preloadFrames = this.preloadAmount;
-                }
-
-                StartCoroutine(this.PreloadOverTime());
-            }
-            else
-            {
-                // Reduce debug spam: Turn off this.logMessages then set it back when done.
-                this.forceLoggingSilent = true;
-
-                T inst;
-                while (this.totalCount < this.preloadAmount) // Total count will update
-                {
-                    // Preload...
-                    // This will parent, position and orient the poolGroupDict
-                    //   under the SpawnPool.group
-                    inst = this.SpawnNew();
-                    this.DespawnInstance(inst, false);
-                }
-
-                // Restore the previous setting
-                this.forceLoggingSilent = false;
-            }
-        }
-
-        private IEnumerator PreloadOverTime()
-        {
-            yield return new WaitForSeconds(this.preloadDelay);
-
-            T inst;
-
-            // subtract anything spawned by other scripts, just in case
-            int amount = this.preloadAmount - this.totalCount;
-            if (amount <= 0)
-                yield break;
-
-            // Doesn't work for Windows8...
-            //  This does the division and sets the remainder as an out value.
-            //int numPerFrame = System.Math.DivRem(amount, this.preloadFrames, out remainder);
-            int remainder = amount % this.preloadFrames;
-            int numPerFrame = amount / this.preloadFrames;
-
-            // Reduce debug spam: Turn off this.logMessages then set it back when done.
-            this.forceLoggingSilent = true;
-
-            int numThisFrame;
-            for (int i = 0; i < this.preloadFrames; i++)
-            {
-                // Add the remainder to the *last* frame
-                numThisFrame = numPerFrame;
-                if (i == this.preloadFrames - 1)
-                {
-                    numThisFrame += remainder;
-                }
-
-                for (int n = 0; n < numThisFrame; n++)
-                {
-                    // Preload...
-                    // This will parent, position and orient the poolGroupDict
-                    //   under the SpawnPool.group
-                    inst = this.SpawnNew();
-                    if (inst != null)
-                        this.DespawnInstance(inst, false);
-
-                    yield return null;
-                }
-
-                // Safety check in case something else is making instances. 
-                //   Quit early if done early
-                if (this.totalCount > this.preloadAmount)
-                    break;
-            }
-
-            // Restore the previous setting
-            this.forceLoggingSilent = false;
         }
 
         #endregion Pool Functionality
@@ -597,7 +377,6 @@ namespace com.elex.Pool
             }
         }
 
-
         /** 调用对象方法--销毁 */
         virtual protected void ItemDestruct(T instance)
         {
@@ -607,28 +386,7 @@ namespace com.elex.Pool
                 item.PDestruct();
             }
         }
-
-        /** 调用对象方法--设置为闲置状态消息 */
-        virtual protected void ItemOnDespawned(T instance)
-        {
-            if (IsImplementIPoolItem)
-            {
-                IPoolItem item = (IPoolItem) instance;
-                item.POnDespawned(this);
-            }
-        }
-
-
-        /** 调用对象方法--设置为使用状态消息 */
-        virtual internal void ItemOnSpawned(T instance)
-        {
-            if (IsImplementIPoolItem)
-            {
-                IPoolItem item = (IPoolItem) instance;
-                item.POnSpawned(this);
-            }
-        }
-
+        
         /** 调用对象方法--设置是否激活 */
         virtual protected void ItemSetActive(T instance, bool value)
         {
@@ -668,21 +426,58 @@ namespace com.elex.Pool
             return instance;
         }
 
-
-        /** 启动协程 */
-        virtual public Coroutine StartCoroutine(IEnumerator routine)
+        #endregion
+        
+        internal override void OnUpdate()
         {
-            if (poolGroup != null)
+            if (!triggerAutoClear)
             {
-                return poolGroup.StartCoroutine(routine);
+                return;
             }
-            else
+            if (Time.realtimeSinceStartup-lastClearTime < autoDestorySpan)
             {
-                return PoolManager.Instance.StartCoroutine(routine);
+                return;
+            }
+            if (this._despawned.Count > 0&&this.totalCount > this.holdNum)
+            {
+                for (int i = 0; i < this.destoryNumPerFrame; i++)
+                {
+                    if (this.totalCount <= this.holdNum)
+                    {
+                        triggerAutoClear = false;
+                        break;
+                    }
+                    if (this._despawned.Count > 0)
+                    {
+                        T inst = this._despawned[0];
+                        this._despawned.RemoveAt(0);
+                        ItemDestruct(inst);
+
+                        if (this.logMessages)
+                            Debug.Log(string.Format("[对象池] {0} : " +
+                                                    "清理数量至{1}个,Active实例数量{2},Deactive实例数量{3},目前实例对象数量{4}个",
+                                this.name,
+                                this.holdNum,
+                                this._spawned.Count,
+                                this._despawned.Count,
+                                this.totalCount));
+                    }
+                    else
+                    {
+                        if (this.logMessages)
+                        {
+                            Debug.Log(string.Format("[对象池] {0} : " +
+                                                    "等待闲置对象，目前闲置对象数量为0。 " +
+                                                    "等待{1}秒再次次检测",
+                                this.name,
+                                this.autoDestorySpan));
+                        }
+                        triggerAutoClear = false;
+                        break;
+                    }
+                }
             }
         }
-
-        #endregion
 
         public override string ToString()
         {

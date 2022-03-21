@@ -3,13 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-namespace com.elex.Pool
+namespace ELEX.NewPool
 {
     public partial class PoolGroup 
     {
         /** 组名称 */
         public string groupName;
-
         /** 是否打印日志信息 */
         public bool logMessages = true;
 
@@ -20,59 +19,39 @@ namespace com.elex.Pool
             this.groupName = groupName;
         }
 
-
-        public List<Coroutine> corutineList = new List<Coroutine>();
-        /** 启动协程 */
-        virtual public Coroutine StartCoroutine(IEnumerator routine)
-        {
-            Coroutine c = PoolManager.Instance.StartCoroutine(routine);
-            corutineList.Add(c);
-            return c;
-        }
-
-        virtual public void StopAllCoroutines()
-        {
-            Coroutine c;
-            for(int i = corutineList.Count - 1; i >= 0; i --)
-            {
-                c = corutineList[i];
-                PoolManager.Instance.StopCoroutine(c);
-            }
-
-            corutineList.Clear();
-        }
-
-        public void Start()
+        public void OnStart()
         {
             if (this.logMessages)
                 Debug.Log(string.Format("PoolGroup {0}: Initializing..", this.groupName));
 
-            PoolManager.poolGroupDict.Add(this);
+            PoolManager.Instance.Add(this);
         }
 
-        public void Destroy()
+        public void OnUpdate()
         {
-            OnDestruct();
-        }
+            foreach(var item in typePools)
+            {
+                item.Value.OnUpdate();
+            }
 
+            foreach (var item in _prefabPools)
+            {
+                item.OnUpdate();
+            }
+        }
+        
         internal void OnDestruct()
         {
             if (this.logMessages)
                 Debug.Log(string.Format("PoolGroup {0}: Destroying...", this.groupName));
 
-            PoolManager.poolGroupDict.Remove(this);
-
-            this.StopAllCoroutines();
-
+            PoolManager.Instance.Remove(this);
             foreach(var kvp in typePools)
             {
                 kvp.Value.SelfDestruct();
             }
-
             typePools.Clear();
-
-            OnDestruct_Prefab();
-
+            OnDestruct_PrefabPool();
         }
 
 
@@ -89,37 +68,8 @@ namespace com.elex.Pool
             }
 
             objectPool.inspectorInstanceConstructor();
-            // Preloading (uses a singleton bool to be sure this is only done once)
-            if (objectPool.preloaded)
-            {
-                if (this.logMessages)
-                    Debug.Log(string.Format("PoolGroup {0}: 预实例化对象中 preloadAmount={1},  {2}",
-                        this.groupName,
-                        objectPool.preloadAmount,
-                        objectPool.name));
-
-                objectPool.PreloadInstances();
-            }
         }
-
-        /** 添加一个实例到对应的Pool。despawn,true为闲置状态;false为真正使用状态 */
-        public void Add<T>(T instance, bool despawn)
-        {
-            ObjectPool<T> pool = GetPool<T>();
-            if (pool != null)
-            {
-                pool.AddUnpooled(instance, despawn);
-            }
-            else
-            {
-                Debug.LogError(string.Format("PoolGroup {0}: 添加实例对象时，没找到对应类型的对象池 {1} ",
-                    this.groupName,
-                    instance));
-            }
-
-
-        }
-
+        
         /** 获取对应类型的Pool */
         public ObjectPool<T> GetPool<T>()
         {
@@ -156,9 +106,6 @@ namespace com.elex.Pool
             //   Prefab Pool.
             if (inst == null)
                 return default(T);
-
-            pool.ItemOnSpawned(inst);
-
             return inst;
         }
 

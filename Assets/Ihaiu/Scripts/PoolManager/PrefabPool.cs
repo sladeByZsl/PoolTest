@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace com.elex.Pool
+namespace ELEX.NewPool
 {
     public class PrefabPool : ObjectPool<Transform>
     {
@@ -76,29 +76,6 @@ namespace com.elex.Pool
         protected override void ItemDestruct(Transform instance)
         {
             Object.Destroy(instance.gameObject);
-        }
-
-
-        /** 调用对象方法--设置为使用状态消息 */
-        internal override void ItemOnSpawned(Transform instance)
-        {
-            instance.gameObject.BroadcastMessage(
-                "OnSpawned",
-                this,
-                SendMessageOptions.DontRequireReceiver
-            );
-
-        } 
-       
-
-        /** 调用对象方法--设置为闲置状态消息 */
-        protected override void ItemOnDespawned(Transform instance)
-        {
-            instance.gameObject.BroadcastMessage(
-                "OnDespawned",
-                this,
-                SendMessageOptions.DontRequireReceiver
-            );
         }
 
         /** 调用对象方法--设置是否激活 */

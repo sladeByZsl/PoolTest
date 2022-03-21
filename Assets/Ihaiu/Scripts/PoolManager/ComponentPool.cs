@@ -3,19 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace com.elex.Pool
+namespace ELEX.NewPool
 {
     public class ComponentPool<T> : ObjectPool<T> where T : MonoBehaviour
     {
-        // 勾选后实例化的游戏对象的缩放比例将全是1，不勾选择用Prefab默认的。
-        public bool matchPoolScale = false;
-        // 勾选后实例化的游戏对象的Layer将用Prefab默认的。
-        public bool matchPoolLayer = false;
-
         public Transform parent;
-        
         private GameObject _prefabGO;
-        public T prefabComp;
+        private T prefabComp;
         internal GameObject prefabGO
         {
             get
@@ -67,6 +61,10 @@ namespace com.elex.Pool
         internal override void SelfDestruct()
         {
             base.SelfDestruct();
+            if (_prefabGO != null)
+            {
+                Object.Destroy(_prefabGO);
+            }
             if (parent != null)
             {
                 Object.Destroy(parent.gameObject);
@@ -78,29 +76,6 @@ namespace com.elex.Pool
         protected override void ItemDestruct(T instance)
         {
             Object.Destroy(instance.gameObject);
-        }
-
-
-        /** 调用对象方法--设置为使用状态消息 */
-        internal override void ItemOnSpawned(T instance)
-        {
-            instance.gameObject.BroadcastMessage(
-                "OnSpawned",
-                this,
-                SendMessageOptions.DontRequireReceiver
-            );
-
-        } 
-       
-
-        /** 调用对象方法--设置为闲置状态消息 */
-        protected override void ItemOnDespawned(T instance)
-        {
-            instance.gameObject.BroadcastMessage(
-                "OnDespawned",
-                this,
-                SendMessageOptions.DontRequireReceiver
-            );
         }
 
         /** 调用对象方法--设置是否激活 */
