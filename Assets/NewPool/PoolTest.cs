@@ -25,7 +25,7 @@ public class Apple
 
 public class PoolTest : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // OnStart is called before the first frame update
     private Pool<Apple> applePool = null;
     private Apple apple;
     void Start()

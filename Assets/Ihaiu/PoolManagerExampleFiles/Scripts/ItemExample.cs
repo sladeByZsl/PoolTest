@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using com.elex.Pool;
+using ELEX.NewPool;
 using System.Collections.Generic;
 
 namespace PoolManagerExampleFiles
@@ -26,18 +26,6 @@ namespace PoolManagerExampleFiles
         public void PDestruct()
         {
             Debug.LogFormat("PDestruct {0}", this);
-        }
-
-        /** 对象池设置--设置为使用状态消息 */
-        public void POnSpawned<T>(ObjectPool<T> pool)
-        {
-            Debug.LogFormat("POnSpawned {0}", this);
-        }
-
-        /** 对象池设置--该对象为闲置状态 */
-        public void POnDespawned<T>(ObjectPool<T> pool)
-        {
-            Debug.LogFormat("POnDespawned {0}", this);
         }
 
         /** 对象池设置--该对象是否激活 */
@@ -89,21 +77,11 @@ namespace PoolManagerExampleFiles
 
         public IEnumerator TestCache()
         {
-
-            // 缓存池这个Prefab的预加载数量。意思为一开始加载的数量！
-            pool.preloadAmount = 0;
-            // 如果勾选表示缓存池所有的gameobject可以“异步”加载。
-            pool.preloadAsync = true;
-            // 每几帧加载一个。
-            pool.preloadFrames = 2;
-            // 延迟多久开始加载。
-            pool.preloadDelay = 0;
-
             // 是否打印日志信息
             pool.logMessages = true;
 
 
-            PoolManager.poolGroupDict.common.CreatePool<Item>(pool);
+            PoolManager.Instance.common.CreatePool<Item>(pool);
             status = "Init";
 
             yield return new WaitForSeconds(5);
@@ -113,7 +91,7 @@ namespace PoolManagerExampleFiles
                 status = "Spawn ";
                 for(int j = 0; j < 10; j ++)
                 {
-                    Item item = PoolManager.poolGroupDict.common.Spawn<Item>(Vector3.one * j);
+                    Item item = PoolManager.Instance.common.Spawn<Item>(Vector3.one * j);
                     list.Add(item);
                     Debug.LogFormat("[Spawn] {0}, {1}" , j, item);
                     Debug.Log(pool);
@@ -128,7 +106,7 @@ namespace PoolManagerExampleFiles
                 for(int j = list.Count - 1; j >= 0; j --)
                 {
                     Item item = list[j];
-                    PoolManager.poolGroupDict.common.Despawn<Item>(item);
+                    PoolManager.Instance.common.Despawn<Item>(item);
                     Debug.Log(pool);
                     status = "Despawn " + j;
                     current =item != null ?  item.ToString() : "null";

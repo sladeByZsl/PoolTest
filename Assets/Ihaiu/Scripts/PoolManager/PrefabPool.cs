@@ -63,6 +63,10 @@ namespace ELEX.NewPool
         internal override void SelfDestruct()
         {
             base.SelfDestruct();
+            if (_prefabGO != null)
+            {
+                Object.Destroy(_prefabGO);
+            }
             if (parent != null)
             {
                 GameObject.Destroy(parent.gameObject);

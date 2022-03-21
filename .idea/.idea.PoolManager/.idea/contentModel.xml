@@ -12,10 +12,8 @@
             <e p="Scripts" t="Include">
               <e p="ClassExample.cs" t="Include" />
               <e p="ItemExample.cs" t="Include" />
-              <e p="PoolGroupDict_Game.cs" t="Include" />
               <e p="PrefabExample.cs" t="Include" />
               <e p="TestPrefabEvent.cs" t="Include" />
-              <e p="WarGroupExample.cs" t="Include" />
             </e>
             <e p="Test" t="Include">
               <e p="TestClassPool.cs" t="Include" />
@@ -31,7 +29,6 @@
               <e p="ObjectPool.cs" t="Include" />
               <e p="PoolGroup.cs" t="Include" />
               <e p="PoolGroup_Prefab.cs" t="Include" />
-              <e p="PoolGroupDict.cs" t="Include" />
               <e p="PoolManager.cs" t="Include" />
               <e p="PrefabPool.cs" t="Include" />
               <e p="ScriptableObjectPool.cs" t="Include" />

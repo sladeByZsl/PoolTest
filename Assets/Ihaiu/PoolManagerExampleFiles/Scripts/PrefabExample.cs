@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using com.elex.Pool;
+using ELEX.NewPool;
 using System.Collections.Generic;
 
 namespace PoolManagerExampleFiles
@@ -35,20 +35,7 @@ namespace PoolManagerExampleFiles
 
         public IEnumerator TestCull()
         {
-
-
             pool.prefab = prefab;
-
-            // 缓存池这个Prefab的预加载数量。意思为一开始加载的数量！
-            pool.preloadAmount = 3;
-            // 如果勾选表示缓存池所有的gameobject可以“异步”加载。
-            pool.preloadAsync = true;
-            // 每几帧加载一个。
-            pool.preloadFrames = 2;
-            // 延迟多久开始加载。
-            pool.preloadDelay = 0;
-
-
             // 是否开启对象实例化的限制功能。
             pool.limitInstances = false;
             // 限制实例化Prefab的数量，也就是限制缓冲池的数量，它和上面的preloadAmount是有冲突的，如果同时开启则以limitAmout为准。
@@ -69,7 +56,7 @@ namespace PoolManagerExampleFiles
             pool.logMessages = true;
 
 
-            PoolManager.poolGroupDict.common.CreatePool(pool);
+            PoolManager.Instance.common.CreatePool(pool);
             status = "Init";
 
             yield return new WaitForSeconds(5);
@@ -79,7 +66,7 @@ namespace PoolManagerExampleFiles
                 status = "Spawn ";
                 for(int j = 0; j < 10; j ++)
                 {
-                    Transform item = PoolManager.poolGroupDict.common.Spawn(prefab);
+                    Transform item = PoolManager.Instance.common.Spawn(prefab);
                     item.position = Vector3.forward * (j + 0.5f);
                     list.Add(item);
                     Debug.LogFormat("[Spawn] {0}, {1}" , j, item);
@@ -95,7 +82,7 @@ namespace PoolManagerExampleFiles
                 for(int j = list.Count - 1; j >= 0; j --)
                 {
                     Transform item = list[j];
-                    PoolManager.poolGroupDict.common.Despawn(item);
+                    PoolManager.Instance.common.Despawn(item);
                     Debug.Log(pool);
                     status = "Despawn " + j;
                     current =item;
@@ -110,25 +97,12 @@ namespace PoolManagerExampleFiles
 
         public IEnumerator TestCache()
         {
-
             pool.prefab = prefab;
-
-            // 缓存池这个Prefab的预加载数量。意思为一开始加载的数量！
-            pool.preloadAmount = 3;
-            // 如果勾选表示缓存池所有的gameobject可以“异步”加载。
-            pool.preloadAsync = true;
-            // 每几帧加载一个。
-            pool.preloadFrames = 2;
-            // 延迟多久开始加载。
-            pool.preloadDelay = 0;
-
-        
-
             // 是否打印日志信息
             pool.logMessages = true;
 
 
-            PoolManager.poolGroupDict.common.CreatePool(pool);
+            PoolManager.Instance.common.CreatePool(pool);
             status = "Init";
 
             yield return new WaitForSeconds(5);
@@ -138,7 +112,7 @@ namespace PoolManagerExampleFiles
                 status = "Spawn ";
                 for(int j = 0; j < 10; j ++)
                 {
-                    Transform item = PoolManager.poolGroupDict.common.Spawn(prefab);
+                    Transform item = PoolManager.Instance.common.Spawn(prefab);
                     item.position = Vector3.forward * (j + 0.5f);
                     list.Add(item);
                     Debug.LogFormat("[Spawn] {0}, {1}" , j, item);
@@ -154,7 +128,7 @@ namespace PoolManagerExampleFiles
                 for(int j = list.Count - 1; j >= 0; j --)
                 {
                     Transform item = list[j];
-                    PoolManager.poolGroupDict.common.Despawn(item);
+                    PoolManager.Instance.common.Despawn(item);
                     Debug.Log(pool);
                     status = "Despawn " + j;
                     current =item;

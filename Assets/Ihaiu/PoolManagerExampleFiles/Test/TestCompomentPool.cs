@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using com.elex.Pool;
+using ELEX.NewPool;
 using UnityEngine;
 
 public class TestCompomentPool : MonoBehaviour
@@ -13,7 +13,7 @@ public class TestCompomentPool : MonoBehaviour
     public int despawned;
     void Start()
     {
-        PoolManager.poolGroupDict.common.CreatePool(_pool);
+        PoolManager.Instance.common.CreatePool(_pool);
     }
     
     void Update()
@@ -24,7 +24,7 @@ public class TestCompomentPool : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.J))
         {
-            TestMono t = PoolManager.poolGroupDict.common.Spawn<TestMono>();
+            TestMono t = PoolManager.Instance.common.Spawn<TestMono>();
             list.Add(t);
         }
 
@@ -40,7 +40,7 @@ public class TestCompomentPool : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.L))
         {
-            PoolManager.poolGroupDict.common.ClearPool<TestMono>();
+            PoolManager.Instance.common.ClearPool<TestMono>();
         }
     }
 }
