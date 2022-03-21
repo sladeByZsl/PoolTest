@@ -4,12 +4,27 @@
     <list default="true" id="1c450c47-5c0c-4dbb-a48f-17f400981940" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/ClassExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/ClassExample.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/ItemExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/ItemExample.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/PoolGroupDict_Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/PoolGroupDict_Game.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/PrefabExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/PrefabExample.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/TestPrefabEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/TestPrefabEvent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/WarGroupExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/WarGroupExample.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Test/TestClassPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Test/TestClassPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Test/TestCompomentPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Test/TestCompomentPool.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/AbstractObjectPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/AbstractObjectPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ComponentPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ComponentPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/IPoolItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/IPoolItem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ObjectPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ObjectPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroupDict.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroupDict.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup_Component.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup_Component.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup_Prefab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup_Prefab.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PrefabPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PrefabPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ScriptableObjectPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ScriptableObjectPool.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,13 +44,16 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F98083CB-C97E-4FA0-A4EF-2F523FEFF5E1/91/03e3ad3b/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/AbstractObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ComponentPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ScriptableObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F98083CB-C97E-4FA0-A4EF-2F523FEFF5E1/42/22280516/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Test/TestCompomentPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F98083CB-C97E-4FA0-A4EF-2F523FEFF5E1/b9/579ea6de/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PrefabPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/IPoolItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroupDict.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Test/TestMono.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/ClassExample.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/ItemExample.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/PrefabExample.cs" root0="FORCE_HIGHLIGHTING" />
@@ -57,11 +75,16 @@
         <option value="$PROJECT_DIR$/Assets/NewPool/PoolBase.cs" />
         <option value="$PROJECT_DIR$/Assets/NewPool/PoolManager.cs" />
         <option value="$PROJECT_DIR$/Assets/NewPool/PoolTest.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup_Prefab.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/ItemExample.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Test/TestClassPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup_Component.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ComponentPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/AbstractObjectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ObjectPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Test/TestCompomentPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup_Prefab.cs" />
       </list>
     </option>
   </component>
@@ -72,6 +95,7 @@
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -115,7 +139,7 @@
       <workItem from="1646380405118" duration="2998000" />
       <workItem from="1646619416946" duration="14819000" />
       <workItem from="1646881240330" duration="8312000" />
-      <workItem from="1647327825684" duration="13519000" />
+      <workItem from="1647327825684" duration="23887000" />
     </task>
     <servers />
   </component>

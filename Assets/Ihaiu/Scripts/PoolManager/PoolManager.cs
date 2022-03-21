@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-namespace Ihaius
+namespace com.elex.Pool
 {
     public class PoolManager : MonoBehaviour
     {
         /** PoolGroup字典 */
-        public static PoolGroupDict instance = new PoolGroupDict();
+        public static PoolGroupDict poolGroupDict = new PoolGroupDict();
 
 
         private static PoolManager _instance;

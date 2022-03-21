@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Ihaius;
+using com.elex.Pool;
 using UnityEngine;
 
 public class TestCompomentPool : MonoBehaviour
@@ -13,7 +13,7 @@ public class TestCompomentPool : MonoBehaviour
     public int despawned;
     void Start()
     {
-        PoolManager.instance.common.CreatePool(_pool);
+        PoolManager.poolGroupDict.common.CreatePool(_pool);
     }
     
     void Update()
@@ -24,7 +24,7 @@ public class TestCompomentPool : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.J))
         {
-            TestMono t = PoolManager.instance.common.SpawnMonoBehaviour<TestMono>();
+            TestMono t = PoolManager.poolGroupDict.common.Spawn<TestMono>();
             list.Add(t);
         }
 
@@ -36,6 +36,11 @@ public class TestCompomentPool : MonoBehaviour
                 list.RemoveAt(0);
                 _pool.DespawnInstance(item);
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            PoolManager.poolGroupDict.common.ClearPool<TestMono>();
         }
     }
 }

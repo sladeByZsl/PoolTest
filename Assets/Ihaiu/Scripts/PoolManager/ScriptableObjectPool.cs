@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ihaius
+namespace com.elex.Pool
 {
     public class ScriptableObjectPool<T> : ObjectPool<T> where T : ScriptableObject
     {

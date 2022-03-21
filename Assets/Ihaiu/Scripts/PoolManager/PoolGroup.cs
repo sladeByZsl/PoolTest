@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-namespace Ihaius
+namespace com.elex.Pool
 {
     public partial class PoolGroup 
     {
@@ -47,7 +47,7 @@ namespace Ihaius
             if (this.logMessages)
                 Debug.Log(string.Format("PoolGroup {0}: Initializing..", this.groupName));
 
-            PoolManager.instance.Add(this);
+            PoolManager.poolGroupDict.Add(this);
         }
 
         public void Destroy()
@@ -60,7 +60,7 @@ namespace Ihaius
             if (this.logMessages)
                 Debug.Log(string.Format("PoolGroup {0}: Destroying...", this.groupName));
 
-            PoolManager.instance.Remove(this);
+            PoolManager.poolGroupDict.Remove(this);
 
             this.StopAllCoroutines();
 
@@ -137,10 +137,6 @@ namespace Ihaius
             return null;
         }
 
-
-
-
-
         /** 获取一个对应类型的实例对象 */
         public T Spawn<T>(params object[] args)
         {
@@ -176,18 +172,14 @@ namespace Ihaius
             }
         }
 
-        public void Despawn<T>(T instance, float seconds)
+        public void ClearPool<T>()
         {
-            StartCoroutine(this.DoDespawnAfterSeconds(instance, seconds));
+            ObjectPool<T> pool = GetPool<T>();
+            if (pool != null)
+            {
+                typePools.Remove(typeof(T));
+                pool.SelfDestruct();
+            }
         }
-
-
-        private IEnumerator DoDespawnAfterSeconds<T>(T instance, float seconds)
-        {
-            yield return  new WaitForSeconds(seconds);
-            Despawn<T>(instance);
-        }
-
-
     }
 }

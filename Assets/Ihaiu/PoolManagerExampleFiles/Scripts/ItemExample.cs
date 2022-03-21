@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Ihaius;
+using com.elex.Pool;
 using System.Collections.Generic;
 
 namespace PoolManagerExampleFiles
@@ -103,7 +103,7 @@ namespace PoolManagerExampleFiles
             pool.logMessages = true;
 
 
-            PoolManager.instance.common.CreatePool<Item>(pool);
+            PoolManager.poolGroupDict.common.CreatePool<Item>(pool);
             status = "Init";
 
             yield return new WaitForSeconds(5);
@@ -113,7 +113,7 @@ namespace PoolManagerExampleFiles
                 status = "Spawn ";
                 for(int j = 0; j < 10; j ++)
                 {
-                    Item item = PoolManager.instance.common.Spawn<Item>(Vector3.one * j);
+                    Item item = PoolManager.poolGroupDict.common.Spawn<Item>(Vector3.one * j);
                     list.Add(item);
                     Debug.LogFormat("[Spawn] {0}, {1}" , j, item);
                     Debug.Log(pool);
@@ -128,7 +128,7 @@ namespace PoolManagerExampleFiles
                 for(int j = list.Count - 1; j >= 0; j --)
                 {
                     Item item = list[j];
-                    PoolManager.instance.common.Despawn<Item>(item);
+                    PoolManager.poolGroupDict.common.Despawn<Item>(item);
                     Debug.Log(pool);
                     status = "Despawn " + j;
                     current =item != null ?  item.ToString() : "null";

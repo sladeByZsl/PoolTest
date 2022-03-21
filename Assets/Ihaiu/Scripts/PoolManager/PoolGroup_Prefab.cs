@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-namespace Ihaius
+namespace com.elex.Pool
 {
     public partial class PoolGroup 
     {
@@ -74,7 +74,7 @@ namespace Ihaius
 
                     if (this.logMessages)
                         Debug.Log(string.Format(
-                            "PoolGroup {0}: Adding previously unpooled instance {1}",
+                            "PoolGroup {0}: Adding previously unpooled poolGroupDict {1}",
                             this.groupName,
                             instance.name));
 
@@ -125,7 +125,7 @@ namespace Ihaius
                     }
                     else if (inst.parent != prefabPool.parent)  // Auto organize?
                     {
-                        // If a new instance was created, it won't be grouped
+                        // If a new poolGroupDict was created, it won't be grouped
                         inst.parent = prefabPool.parent;
                     }
 
@@ -146,7 +146,7 @@ namespace Ihaius
             newPrefabPool.prefab = prefab;
             this.CreatePool(newPrefabPool);
 
-            // Spawn the new instance (Note: prefab already set in PrefabPool)
+            // Spawn the new poolGroupDict (Note: prefab already set in PrefabPool)
             inst = newPrefabPool.SpawnInstance(pos, rot);
 
             if (parent != null)  // User explicitly provided a parent
@@ -187,7 +187,7 @@ namespace Ihaius
         /// <summary>
         /// See primary Spawn method for documentation.
         /// 
-        /// Overload to take only a prefab and instance using an 'empty' 
+        /// Overload to take only a prefab and poolGroupDict using an 'empty' 
         /// position and rotation.
         /// </summary>
         public Transform Spawn(Transform prefab)
@@ -200,7 +200,7 @@ namespace Ihaius
         /// See primary Spawn method for documentation.
         /// 
         /// Convienince overload to take only a prefab  and parent the new 
-        /// instance under the given parent
+        /// poolGroupDict under the given parent
         /// </summary>
         public Transform Spawn(Transform prefab, Transform parent)
         {
@@ -225,7 +225,7 @@ namespace Ihaius
         /// See primary Spawn method for documentation.
         /// 
         /// Convienince overload to take only a prefab name and parent the new 
-        /// instance under the given parent
+        /// poolGroupDict under the given parent
         /// </summary>
         public Transform Spawn(string prefabName, Transform parent)
         {
@@ -238,7 +238,7 @@ namespace Ihaius
         /// See primary Spawn method for documentation.
         /// 
         /// Overload to take only a prefab name. The cached reference is pulled from 
-        /// the SpawnPool.prefabs dictionary. An instance will be set to the passed 
+        /// the SpawnPool.prefabs dictionary. An poolGroupDict will be set to the passed 
         /// position and rotation.
         /// </summary>
         public Transform Spawn(string prefabName, Vector3 pos, Quaternion rot)
@@ -252,7 +252,7 @@ namespace Ihaius
         /// See primary Spawn method for documentation.
         /// 
         /// Convienince overload to take only a prefab name and parent the new 
-        /// instance under the given parent. An instance will be set to the passed 
+        /// poolGroupDict under the given parent. An poolGroupDict will be set to the passed 
         /// position and rotation.
         /// </summary>
         public Transform Spawn(string prefabName, Vector3 pos, Quaternion rot, 
@@ -291,7 +291,7 @@ namespace Ihaius
                 }
             }
 
-            // If still false, then the instance wasn't found anywhere in the pool
+            // If still false, then the poolGroupDict wasn't found anywhere in the pool
             if (!despawned)
             {
                 Debug.LogError(string.Format("SpawnPool {0}: {1} not found in SpawnPool",
@@ -308,8 +308,8 @@ namespace Ihaius
 
 
         /// <summary>
-        /// See docs for Despawn(Transform instance) for basic functionalty information.
-        /// Convienince overload to provide the option to re-parent for the instance 
+        /// See docs for Despawn(Transform poolGroupDict) for basic functionalty information.
+        /// Convienince overload to provide the option to re-parent for the poolGroupDict 
         /// just before despawn.
         /// </summary>
         public void Despawn(Transform instance, Transform parent)
@@ -317,58 +317,6 @@ namespace Ihaius
             instance.parent = parent;
             this.Despawn(instance);
         }
-
-
-        /// <description>
-        /// See docs for Despawn(Transform instance). This expands that functionality.
-        ///   If the passed object is managed by this SpawnPool, it will be 
-        ///   deactivated and made available to be spawned again.
-        /// </description>
-        /// <param name="item">The transform of the instance to process</param>
-        /// <param name="seconds">The time in seconds to wait before despawning</param>
-        public void Despawn(Transform instance, float seconds)
-        {
-            this.StartCoroutine(this.DoDespawnAfterSeconds(instance, seconds, false, null));
-        }
-
-
-        /// <summary>
-        /// See docs for Despawn(Transform instance) for basic functionalty information.
-        ///     
-        /// Convienince overload to provide the option to re-parent for the instance 
-        /// just before despawn.
-        /// </summary>
-        public void Despawn(Transform instance, float seconds, Transform parent)
-        {
-            this.StartCoroutine(this.DoDespawnAfterSeconds(instance, seconds, true, parent));
-        }
-
-
-        /// <summary>
-        /// Waits X seconds before despawning. See the docs for DespawnAfterSeconds()
-        /// the argument useParent is used because a null parent is valid in Unity. It will 
-        /// make the scene root the parent
-        /// </summary>
-        private IEnumerator DoDespawnAfterSeconds(Transform instance, float seconds, bool useParent, Transform parent)
-        {
-            GameObject go = instance.gameObject;
-            while (seconds > 0)
-            {
-                yield return null;
-
-                // If the instance was deactivated while waiting here, just quit
-                if (!go.activeInHierarchy)
-                    yield break;
-
-                seconds -= Time.deltaTime;
-            }
-
-            if (useParent)
-                this.Despawn(instance, parent);
-            else
-                this.Despawn(instance);
-        }
-
 
         /// <description>
         /// Despawns all active instances in this SpawnPool
@@ -399,7 +347,7 @@ namespace Ihaius
         /// <summary>
         /// Returns the prefab pool for a given prefab.
         /// </summary>
-        /// <param name="prefab">The GameObject of an instance</param>
+        /// <param name="prefab">The GameObject of an poolGroupDict</param>
         /// <returns>PrefabPool</returns>
         public PrefabPool GetPool(GameObject prefab)
         {
@@ -419,10 +367,10 @@ namespace Ihaius
 
 
         /// <summary>
-        /// Returns the prefab used to create the passed instance. 
+        /// Returns the prefab used to create the passed poolGroupDict. 
         /// This is provided for convienince as Unity doesn't offer this feature.
         /// </summary>
-        /// <param name="instance">The GameObject of an instance</param>
+        /// <param name="instance">The GameObject of an poolGroupDict</param>
         /// <returns>GameObject</returns>
         public GameObject GetPrefab(GameObject instance)
         {

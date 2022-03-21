@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-namespace Ihaius
+namespace com.elex.Pool
 {
     public class ObjectPool<T> : AbstractObjectPool
     {
@@ -25,6 +25,16 @@ namespace Ihaius
             get { return new List<T>(this._despawned); }
         }
 
+        /** 对象下标，纯粹是拿来标记object产生到了第几个,永远自增+1*/
+        private int _index = 0;
+        public int index {
+            get
+            {
+                _index++;
+                return _index;
+            }
+        }
+        
         /** 对象的总数 = 使用的数量 + 闲置的数量 */
         public int totalCount
         {
@@ -48,6 +58,7 @@ namespace Ihaius
         {
             _spawned = new List<T>();
             _despawned = new List<T>();
+            _index = 0;
         }
 
         /** 析构方法
@@ -108,7 +119,7 @@ namespace Ihaius
             this._spawned.Remove(xform);
             this._despawned.Add(xform);
 
-            // Notify instance of event OnDespawned for custom code additions.
+            // Notify poolGroupDict of event OnDespawned for custom code additions.
             //   This is done before handling the deactivate and enqueue incase 
             //   there the user introduces an unforseen issue.
             if (sendEventMessage)
@@ -116,7 +127,7 @@ namespace Ihaius
                 ItemOnDespawned(xform);
             }
 
-            // Deactivate the instance and all children
+            // Deactivate the poolGroupDict and all children
             ItemSetActive(xform, false);
 
             //确保只开启一次缓存池
@@ -200,7 +211,7 @@ namespace Ihaius
         /// 如果闲置列表里有对象，就从限制列表里取出第一个对象；并把这个对象放到_spawned列表
         /// 如果限制列表没有对象，就新建一个对象
         /// </summary>
-        /// <returns>The instance.</returns>
+        /// <returns>The poolGroupDict.</returns>
         internal T SpawnInstance(params object[] args)
         {
             // Handle FIFO limiting if the limit was used and reached.
@@ -226,7 +237,7 @@ namespace Ihaius
 
             T inst;
 
-            // If nothing is available, create a new instance
+            // If nothing is available, create a new poolGroupDict
             if (this._despawned.Count == 0)
             {
                 // This will also handle limiting the number of NEW instances
@@ -235,7 +246,7 @@ namespace Ihaius
             }
             else
             {
-                // Switch the instance we are using to the spawned list
+                // Switch the poolGroupDict we are using to the spawned list
                 // Use the first item in the list for ease
                 inst = this._despawned[0];
                 this._despawned.RemoveAt(0);
@@ -293,7 +304,7 @@ namespace Ihaius
             this.nameInstance(inst); // Adds the number to the end
 
 
-            // Start tracking the new instance
+            // Start tracking the new poolGroupDict
             this._spawned.Add(inst);
 
             if (this.logMessages)
@@ -308,7 +319,7 @@ namespace Ihaius
         /// <summary>
         /// 将一个实例对象添加到缓存池。 despawn=true时就加到_despwan闲置列表，并设置gameObject.active=false；否则就加到_spawn正在被使用列表
         /// </summary>
-        /// <param name="inst">The instance to add</param>
+        /// <param name="inst">The poolGroupDict to add</param>
         /// <param name="despawn">True to despawn on add</param>
         internal void AddUnpooled(T inst, bool despawn)
         {
@@ -316,7 +327,7 @@ namespace Ihaius
 
             if (despawn)
             {
-                // Deactivate the instance and all children
+                // Deactivate the poolGroupDict and all children
                 ItemSetActive(inst, false);
 
                 // Start Tracking as despawned
@@ -394,7 +405,7 @@ namespace Ihaius
                 while (this.totalCount < this.preloadAmount) // Total count will update
                 {
                     // Preload...
-                    // This will parent, position and orient the instance
+                    // This will parent, position and orient the poolGroupDict
                     //   under the SpawnPool.group
                     inst = this.SpawnNew();
                     this.DespawnInstance(inst, false);
@@ -438,7 +449,7 @@ namespace Ihaius
                 for (int n = 0; n < numThisFrame; n++)
                 {
                     // Preload...
-                    // This will parent, position and orient the instance
+                    // This will parent, position and orient the poolGroupDict
                     //   under the SpawnPool.group
                     inst = this.SpawnNew();
                     if (inst != null)
@@ -464,7 +475,7 @@ namespace Ihaius
         /// <summary>
         /// 检查是否包含了该对象。spawned、despawned从这两个列表里检查
         /// </summary>
-        /// <param name="inst">A instance to test.</param>
+        /// <param name="inst">A poolGroupDict to test.</param>
         /// <returns>bool</returns>
         public bool Contains(T inst)
         {

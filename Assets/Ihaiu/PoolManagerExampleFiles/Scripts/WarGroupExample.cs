@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Ihaius;
+using com.elex.Pool;
 using System.Collections.Generic;
 
 public class WarGroupExample : MonoBehaviour {
@@ -43,7 +43,7 @@ public class WarGroupExample : MonoBehaviour {
     public IEnumerator TestCache()
     {
 
-        group = PoolManager.instance.Create("WarPoolGroup");
+        group = PoolManager.poolGroupDict.Create("WarPoolGroup");
 
 
 

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Ihaius;
+using com.elex.Pool;
 
 public class TestPrefabEvent : MonoBehaviour {
 

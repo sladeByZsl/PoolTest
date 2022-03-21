@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace Ihaius
+namespace com.elex.Pool
 {
     public abstract class AbstractObjectPool 
     {
@@ -36,7 +36,7 @@ namespace Ihaius
 
 
         /** 是否开启缓存池智能自动清理模式。*/
-        public bool autoDestroy = true;
+        public bool autoDestroy = false;
 
         /** 缓存池自动清理，但是始终保留几个对象不清理。 */
         public int holdNum = 10;

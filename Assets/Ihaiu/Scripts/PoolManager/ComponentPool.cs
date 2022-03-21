@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Ihaius
+namespace com.elex.Pool
 {
     public class ComponentPool<T> : ObjectPool<T> where T : MonoBehaviour
     {
@@ -122,7 +122,7 @@ namespace Ihaius
         /** 给实例对象重命名 */
         protected override void nameInstance(T instance)
         {
-            instance.gameObject.name = instance.name.Replace("(Clone)", string.Empty) + (this.totalCount + 1).ToString("#000");
+            instance.gameObject.name = instance.name.Replace("(Clone)", string.Empty) + (this.index).ToString("#000");
         }
 
         /** 实例化一个对象 */

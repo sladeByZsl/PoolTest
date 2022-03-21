@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ihaius
+namespace com.elex.Pool
 {
     public partial class PoolGroupDict 
     {

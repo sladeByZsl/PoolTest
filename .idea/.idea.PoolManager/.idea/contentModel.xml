@@ -19,11 +19,14 @@
             </e>
             <e p="Test" t="Include">
               <e p="TestClassPool.cs" t="Include" />
+              <e p="TestCompomentPool.cs" t="Include" />
+              <e p="TestMono.cs" t="Include" />
             </e>
           </e>
           <e p="Scripts" t="Include">
             <e p="PoolManager" t="Include">
               <e p="AbstractObjectPool.cs" t="Include" />
+              <e p="ComponentPool.cs" t="Include" />
               <e p="IPoolItem.cs" t="Include" />
               <e p="ObjectPool.cs" t="Include" />
               <e p="PoolGroup.cs" t="Include" />
