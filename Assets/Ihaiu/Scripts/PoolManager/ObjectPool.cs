@@ -214,7 +214,7 @@ namespace ELEX.NewPool
         /// 如果限制了实例对象数量，且对象总数大于限制的数量。就返回一个空对象 return null
         /// 否则 实例化一个对象，并检查SpawnPool的设置，对该对象进行设置。最后返回该创建的对象
         /// </summary>
-        public T SpawnNew(params object[] arg)
+        private T SpawnNew(params object[] arg)
         {
             // Handle limiting if the limit was used and reached.
             if (this.limitInstances && this.totalCount >= this.limitAmount)

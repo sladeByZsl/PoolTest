@@ -24,8 +24,8 @@
           <e p="Scripts" t="Include">
             <e p="PoolManager" t="Include">
               <e p="AbstractObjectPool.cs" t="Include" />
-              <e p="ComponentPool.cs" t="Include" />
               <e p="IPoolItem.cs" t="Include" />
+              <e p="NewComponentPool.cs" t="Include" />
               <e p="ObjectPool.cs" t="Include" />
               <e p="PoolGroup.cs" t="Include" />
               <e p="PoolGroup_Prefab.cs" t="Include" />

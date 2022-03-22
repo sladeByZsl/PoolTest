@@ -91,11 +91,14 @@ namespace ELEX.NewPool
         /** 调用对象方法--实例对象重设参数 */
         protected override void ItemSetArg(Transform instance, params object[] args)
         {
-            instance.gameObject.BroadcastMessage(
-                "SetArg",
-                args,
-                SendMessageOptions.DontRequireReceiver
-            );
+            if (args != null&&args.Length>0)
+            {
+                instance.gameObject.BroadcastMessage(
+                    "SetArg",
+                    args,
+                    SendMessageOptions.DontRequireReceiver
+                );
+            }
         }
 
         /** 给实例对象重命名 */

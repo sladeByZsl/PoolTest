@@ -4,19 +4,11 @@
     <list default="true" id="1c450c47-5c0c-4dbb-a48f-17f400981940" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/ClassExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/ClassExample.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/ItemExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/ItemExample.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/PoolGroupDict_Game.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/PoolGroupDict_Game.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/PrefabExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/PrefabExample.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/TestPrefabEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/TestPrefabEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/WarGroupExample.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/WarGroupExample.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Test/TestClassPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Test/TestClassPool.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Test/TestCompomentPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Test/TestCompomentPool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Test/TestMono.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Test/TestMono.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ComponentPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/NewComponentPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ComponentPool.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/NewComponentPool.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ObjectPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ObjectPool.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PrefabPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PrefabPool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NewPool/PoolTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NewPool/PoolTest.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +26,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F98083CB-C97E-4FA0-A4EF-2F523FEFF5E1/91/03e3ad3b/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/AbstractObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ComponentPool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/NewComponentPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ScriptableObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F98083CB-C97E-4FA0-A4EF-2F523FEFF5E1/42/22280516/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
@@ -53,6 +45,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Test/TestClassPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathologicalGames/PoolManager/PreRuntimePoolItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F98083CB-C97E-4FA0-A4EF-2F523FEFF5E1/39/1b3db3b6/Behaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathologicalGames/PoolManager/SpawnPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathologicalGames/PoolManager/PoolManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/NewPool/PoolTest.cs" root0="FORCE_HIGHLIGHTING" />
@@ -69,18 +62,19 @@
         <option value="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/WarGroupExample.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/AbstractObjectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/PoolGroupDict_Game.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroupDict.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Test/TestCompomentPool.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/PrefabExample.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/ClassExample.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup_Prefab.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/ItemExample.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ObjectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/IPoolItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ComponentPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ObjectPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/PrefabExample.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PrefabPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/NewComponentPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Test/TestCompomentPool.cs" />
       </list>
     </option>
   </component>
@@ -135,7 +129,8 @@
       <workItem from="1646380405118" duration="2998000" />
       <workItem from="1646619416946" duration="14819000" />
       <workItem from="1646881240330" duration="8312000" />
-      <workItem from="1647327825684" duration="38247000" />
+      <workItem from="1647327825684" duration="41756000" />
+      <workItem from="1647920744917" duration="2733000" />
     </task>
     <servers />
   </component>

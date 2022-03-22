@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace ELEX.NewPool
 {
-    public class ComponentPool<T> : ObjectPool<T> where T : MonoBehaviour
+    public class NewComponentPool<T> : ObjectPool<T> where T : Component
     {
         public Transform parent;
         private GameObject _prefabGO;

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TestCompomentPool : MonoBehaviour
 {
-    ComponentPool<TestMono> _pool=new ComponentPool<TestMono>();
+    NewComponentPool<TestMono> _pool=new NewComponentPool<TestMono>();
     
     List<TestMono> list = new List<TestMono>();
     public int count;
