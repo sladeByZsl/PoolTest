@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c450c47-5c0c-4dbb-a48f-17f400981940" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoolManager/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Test/TestCompomentPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Test/TestCompomentPool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ComponentPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/NewComponentPool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ComponentPool.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/NewComponentPool.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/AbstractObjectPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/AbstractObjectPool.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ObjectPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ObjectPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup_Prefab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup_Prefab.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PrefabPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PrefabPool.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,20 +60,20 @@
         <option value="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Test/TestClassPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup_Component.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/WarGroupExample.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/AbstractObjectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/PoolGroupDict_Game.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroupDict.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/ClassExample.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup_Prefab.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/ItemExample.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/IPoolItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ComponentPool.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ObjectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Scripts/PrefabExample.cs" />
-        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PrefabPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/NewComponentPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup_Prefab.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PoolGroup.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/AbstractObjectPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/ObjectPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Ihaiu/Scripts/PoolManager/PrefabPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Ihaiu/PoolManagerExampleFiles/Test/TestCompomentPool.cs" />
       </list>
     </option>

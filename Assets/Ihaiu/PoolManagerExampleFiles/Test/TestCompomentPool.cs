@@ -24,7 +24,11 @@ public class TestCompomentPool : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.J))
         {
-            TestMono t = PoolManager.Instance.common.Spawn<TestMono>();
+            //1.这种方式，如果你没有对象池，可以帮你自动创建一个ObjectPool的对象池
+            //TestMono t = PoolManager.Instance.common.Spawn<TestMono>();
+            
+            //2.这种方式，也可以
+            TestMono t = _pool.SpawnInstance();
             list.Add(t);
         }
 
@@ -40,7 +44,11 @@ public class TestCompomentPool : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.L))
         {
-            PoolManager.Instance.common.ClearPool<TestMono>();
+            //1.这种方式，如果你没有对象池，可以帮你自动创建一个ObjectPool的对象池
+            PoolManager.Instance.common.ClearAllDespawn<TestMono>();
+            
+            //2.直接清理
+            _pool.ClearAllDespawn();
         }
     }
 }

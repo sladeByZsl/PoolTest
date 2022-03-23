@@ -118,14 +118,12 @@ namespace ELEX.NewPool
                 pool.DespawnInstance(inst);
             }
         }
-
-        public void ClearPool<T>()
+        public void ClearAllDespawn<T>()
         {
             ObjectPool<T> pool = GetPool<T>();
             if (pool != null)
             {
-                typePools.Remove(typeof(T));
-                pool.SelfDestruct();
+                pool.ClearAllDespawn();
             }
         }
     }

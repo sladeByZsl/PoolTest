@@ -58,8 +58,7 @@ namespace ELEX.NewPool
                 Object.DontDestroyOnLoad(this.parent.gameObject);
             }
         }
-
-
+        
         internal override void SelfDestruct()
         {
             base.SelfDestruct();
@@ -72,9 +71,6 @@ namespace ELEX.NewPool
                 GameObject.Destroy(parent.gameObject);
             }
         }
-
-
-
 
         /** 调用对象方法--销毁 */
         protected override void ItemDestruct(Transform instance)
@@ -115,7 +111,5 @@ namespace ELEX.NewPool
             ItemSetArg(instance, args);
             return instance;
         }
-
-
     }
 }

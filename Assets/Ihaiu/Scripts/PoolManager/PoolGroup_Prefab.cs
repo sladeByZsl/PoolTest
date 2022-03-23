@@ -154,6 +154,12 @@ namespace ELEX.NewPool
             for (int i = 0; i < spawned.Count; i++)
                 this.Despawn(spawned[i]);
         }
+
+        public void ClearAllDespawnPrefab()
+        {
+            
+        }
+        
         #endregion Pool Functionality
 
         #region Utility Functions

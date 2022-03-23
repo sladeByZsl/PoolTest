@@ -74,7 +74,6 @@ namespace ELEX.NewPool
                 ItemDestruct(_despawned[i]);
             }
 
-
             for (int i = _spawned.Count - 1; i >= 0; i--)
             {
                 ItemDestruct(_spawned[i]);
@@ -88,6 +87,19 @@ namespace ELEX.NewPool
 
 
         #region Pool Functionality
+        
+        /// <summary>
+        /// 清楚掉所有闲置对象
+        /// </summary>
+        /// <param name="xform"></param>
+        internal virtual void ClearAllDespawn()
+        {
+            for (int i = _despawned.Count - 1; i >= 0; i--)
+            {
+                ItemDestruct(_despawned[i]);
+            }
+            _despawned.Clear();
+        }
 
         /// <summary>
         /// 设置对象为闲置,入池

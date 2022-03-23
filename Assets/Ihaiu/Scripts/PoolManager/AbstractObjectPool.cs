@@ -36,6 +36,10 @@ namespace ELEX.NewPool
         public bool logMessages = true;
         #endregion
 
+        virtual internal void inspectorInstanceConstructor()
+        {
+            
+        }
         /// <summary>
         /// 析构方法
         /// 用来清理数据
@@ -44,12 +48,9 @@ namespace ELEX.NewPool
         {
             
         }
-
-
         virtual internal void OnUpdate()
         {
             
         }
-        
     }
 }
