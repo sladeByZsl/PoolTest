@@ -1,0 +1,61 @@
+ManifestFileVersion: 0
+CRC: 83574711
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: versioninfo.ab
+      Dependencies: {}
+    Info_1:
+      Name: materials/cubemat.ab
+      Dependencies:
+        Dependency_0: textures/pic3.ab
+    Info_2:
+      Name: prefabs/cube.ab
+      Dependencies:
+        Dependency_0: materials/cubemat.ab
+    Info_3:
+      Name: scenes/example_loadasset.ab
+      Dependencies: {}
+    Info_4:
+      Name: scenes/example_loadprefab.ab
+      Dependencies: {}
+    Info_5:
+      Name: scenes/example_loadscene.ab
+      Dependencies: {}
+    Info_6:
+      Name: scenes/example_spawndespawn.ab
+      Dependencies: {}
+    Info_7:
+      Name: scenes/example_spawnpoolandunload.ab
+      Dependencies: {}
+    Info_8:
+      Name: scenes/example_unloadasset.ab
+      Dependencies: {}
+    Info_9:
+      Name: scenes/example_unloadassetefficiency.ab
+      Dependencies: {}
+    Info_10:
+      Name: scenes/example_unloadscene.ab
+      Dependencies: {}
+    Info_11:
+      Name: scenes/startscene1.ab
+      Dependencies: {}
+    Info_12:
+      Name: scenes/testscene1/testscene.ab
+      Dependencies:
+        Dependency_0: atlas/uibtn.ab
+        Dependency_1: textures/pic3.ab
+    Info_13:
+      Name: scenes/testscene2/testscene.ab
+      Dependencies:
+        Dependency_0: atlas/uibtn.ab
+        Dependency_1: textures/pic3.ab
+    Info_14:
+      Name: atlas/uibtn.ab
+      Dependencies: {}
+    Info_15:
+      Name: sprites/pic1.ab
+      Dependencies: {}
+    Info_16:
+      Name: textures/pic3.ab
+      Dependencies: {}

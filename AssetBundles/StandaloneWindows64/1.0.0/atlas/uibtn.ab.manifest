@@ -1,0 +1,24 @@
+ManifestFileVersion: 0
+CRC: 3831032145
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2e748212dd1b78d6ab2ad29c49470ada
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3dbb92f992534c06c4e322444b68580f
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 687078895
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/AssetBundleMaster/AssetBundleMasterExample/Sprites/Pic2.png
+- Assets/AssetBundleMaster/AssetBundleMasterExample/Sprites/Pic1.tga
+- Assets/AssetBundleMasterSpriteAtlas/uiBtn.spriteatlas
+- Assets/AssetBundleMaster/AssetBundleMasterExample/Sprites/Pic1.png
+Dependencies: []

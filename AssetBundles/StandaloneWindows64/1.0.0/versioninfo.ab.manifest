@@ -1,0 +1,25 @@
+ManifestFileVersion: 0
+CRC: 3612430100
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 8beffa7398be8525f40573c13f5836d1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 6d8a2f9433b895820e997ca8ab8a4fc2
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: a56bec4226fe217439d036760235a218, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b7a613fe4478ec744a7aa583aaaa7612, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/AssetBundleMaster/AssetBundleMasterExample/VersionInfo.prefab
+Dependencies: []

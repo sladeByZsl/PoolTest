@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 200096243
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6ae5a990d768bcab99afe4e830ca3b46
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/AssetBundleMaster/AssetBundleMasterExample/Textures/Pic3.png
+Dependencies: []

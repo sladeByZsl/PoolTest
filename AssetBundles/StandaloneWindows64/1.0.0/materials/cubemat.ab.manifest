@@ -1,0 +1,22 @@
+ManifestFileVersion: 0
+CRC: 1225092113
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ea84e35abaeb2c7d98a456a75ebc0e62
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 939e20ecac0e95a3f7c5cfb3e57acb1d
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/AssetBundleMaster/AssetBundleMasterExample/Materials/CubeMat.mat
+Dependencies:
+- D:/project/PoolTest/AssetBundles/StandaloneWindows64/1.0.0/textures/pic3.ab

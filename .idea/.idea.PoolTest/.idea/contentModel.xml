@@ -1,12 +1,99 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\Administrator\.Rider2019.2\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Administrator\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_PoolTest.727697133.00" t="ExcludeRecursive" />
     <e p="D:\project\PoolTest" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="AssetBundleMaster" t="Include">
+          <e p="AssetBundleMasterExample" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="Example_LoadAsset.cs" t="Include" />
+              <e p="Example_LoadPrefab.cs" t="Include" />
+              <e p="Example_LoadScene.cs" t="Include" />
+              <e p="Example_SpawnDespawn.cs" t="Include" />
+              <e p="Example_SpawnPoolAndUnload.cs" t="Include" />
+              <e p="Example_UnloadAsset.cs" t="Include" />
+              <e p="Example_UnloadAssetEfficiency.cs" t="Include" />
+              <e p="Example_UnloadScene.cs" t="Include" />
+              <e p="StartScene.cs" t="Include" />
+            </e>
+            <e p="Sprites" t="Include">
+              <e p="Pic1.txt" t="Include" />
+            </e>
+          </e>
+          <e p="Editor" t="Include">
+            <e p="AssetBundleBuildWindow.cs" t="Include" />
+            <e p="CommonUtilities" t="Include">
+              <e p="CommonEditorUtils.cs" t="Include" />
+              <e p="MyEditorWindow.cs" t="Include" />
+            </e>
+            <e p="Inspectors" t="Include">
+              <e p="AssetLoadManagerInspector.cs" t="Include" />
+              <e p="AssetUnloadManagerInspector.cs" t="Include" />
+              <e p="CoroutineRootInspector.cs" t="Include" />
+              <e p="DecoratorEditor.cs" t="Include" />
+              <e p="TextureImporterInspector.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Plugins" t="Include">
+            <e p="AssetLoad" t="Include">
+              <e p="AssetBundleLoader.cs" t="Include" />
+              <e p="AssetBundleTarget.cs" t="Include" />
+              <e p="AssetList.cs" t="Include" />
+              <e p="AssetLoader.cs" t="Include" />
+              <e p="AssetLoaderBase.cs" t="Include" />
+              <e p="AssetLoadManager.cs" t="Include" />
+              <e p="AssetUnloadManager.cs" t="Include" />
+              <e p="LevelLoader.cs" t="Include" />
+            </e>
+            <e p="AssetLoadUtility" t="Include">
+              <e p="AssetFile.cs" t="Include" />
+              <e p="AssetFolder.cs" t="Include" />
+              <e p="GameConfig.cs" t="Include" />
+              <e p="GameConfigSetting.cs" t="Include" />
+              <e p="LocalVersion.cs" t="Include" />
+              <e p="Utility.cs" t="Include" />
+              <e p="VersionInfo.cs" t="Include" />
+            </e>
+            <e p="CommonUtilities" t="Include">
+              <e p="AssetBundleWebRequestController.cs" t="Include" />
+              <e p="CollectionExtention.cs" t="Include" />
+              <e p="Containers.cs" t="Include" />
+              <e p="CoroutineController.cs" t="Include" />
+              <e p="CoroutineRoot.cs" t="Include" />
+              <e p="CustomScriptableObject.cs" t="Include" />
+              <e p="FileAccessWrappedFunction.cs" t="Include" />
+              <e p="GameObjectPool.cs" t="Include" />
+              <e p="GlobalVariable.cs" t="Include" />
+              <e p="JsonSerialization.cs" t="Include" />
+              <e p="ObjectPool.cs" t="Include" />
+              <e p="PlayerPrefsData.cs" t="Include" />
+              <e p="PreCacheData.cs" t="Include" />
+              <e p="QueueCommand.cs" t="Include" />
+              <e p="SerialiserableDictionary.cs" t="Include" />
+              <e p="Singleton.cs" t="Include" />
+              <e p="SingletonComponent.cs" t="Include" />
+              <e p="UnityComponentExtention.cs" t="Include" />
+              <e p="UnityObjectPool.cs" t="Include" />
+              <e p="UnityObjectPoolManager.cs" t="Include" />
+              <e p="WeakList.cs" t="Include" />
+              <e p="WeakReference.cs" t="Include" />
+            </e>
+            <e p="ResourceLoad" t="Include">
+              <e p="PrefabLoadManager.cs" t="Include" />
+              <e p="ResourceLoadManager.cs" t="Include" />
+              <e p="ResourcePool.cs" t="Include" />
+              <e p="SceneLoadManager.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="HuaRongDao" t="Include">
+          <e p="GameManager.cs" t="Include" />
+        </e>
         <e p="Ihaiu" t="Include">
           <e p="PoolManagerExampleFiles" t="Include">
             <e p="Scripts" t="Include">
@@ -36,6 +123,318 @@
               <e p="PoolManager.cs" t="Include" />
               <e p="PrefabPool.cs" t="Include" />
               <e p="ScriptableObjectPool.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="LoxodonFramework" t="Include">
+          <e p="Docs" t="Include">
+            <e p="Bundles" t="Include">
+              <e p="readme.txt" t="Include" />
+            </e>
+          </e>
+          <e p="Editor" t="Include">
+            <e p="Bundles" t="Include">
+              <e p="ArchiveContainerExtensions.cs" t="Include" />
+              <e p="Archives" t="Include">
+                <e p="ArchiveBinaryReader.cs" t="Include" />
+                <e p="ArchiveContainer.cs" t="Include" />
+                <e p="ArchiveExtensions.cs" t="Include" />
+                <e p="ArchiveUtil.cs" t="Include" />
+                <e p="AssetArchive.cs" t="Include" />
+                <e p="AssetBundleArchive.cs" t="Include" />
+                <e p="BuiltinArchive.cs" t="Include" />
+                <e p="FeatureExtractor.cs" t="Include" />
+                <e p="Fingerprint" t="Include">
+                  <e p="IdentifierFingerprint.cs" t="Include" />
+                  <e p="IFingerprint.cs" t="Include" />
+                  <e p="PropertiesFingerprint.cs" t="Include" />
+                </e>
+                <e p="ObjectArchive.cs" t="Include" />
+                <e p="ObjectInfo.cs" t="Include" />
+                <e p="Objects" t="Include">
+                  <e p="AssetBundle.cs" t="Include" />
+                  <e p="AssetBundleManifest.cs" t="Include" />
+                  <e p="DynamicObject.cs" t="Include" />
+                  <e p="Hash128.cs" t="Include" />
+                  <e p="Map.cs" t="Include" />
+                  <e p="ObjectExtensions.cs" t="Include" />
+                  <e p="PPtr.cs" t="Include" />
+                  <e p="PreloadData.cs" t="Include" />
+                  <e p="StreamedResource.cs" t="Include" />
+                  <e p="TypelessData.cs" t="Include" />
+                </e>
+                <e p="ReadOnlyBlockStream.cs" t="Include" />
+                <e p="ResourceArchive.cs" t="Include" />
+                <e p="TypeID.cs" t="Include" />
+                <e p="TypeNodeParser.cs" t="Include" />
+                <e p="TypeTree.cs" t="Include" />
+              </e>
+              <e p="Build" t="Include">
+                <e p="BundleBuilder.cs" t="Include" />
+                <e p="BundleModifier" t="Include">
+                  <e p="BundleData.cs" t="Include" />
+                  <e p="CryptographBundleModifier.cs" t="Include" />
+                  <e p="HashFilenameBundleModifier.cs" t="Include" />
+                  <e p="IBundleModifier.cs" t="Include" />
+                  <e p="InvertedIndexBundleModifier.cs" t="Include" />
+                  <e p="PublishBundleModifier.cs" t="Include" />
+                </e>
+                <e p="IBundleFilter.cs" t="Include" />
+              </e>
+              <e p="EditorExtensions.cs" t="Include" />
+              <e p="Redundancy" t="Include">
+                <e p="IRedundancyAnalyzer.cs" t="Include" />
+                <e p="RedundancyAnalyzer.cs" t="Include" />
+                <e p="RedundancyInfo.cs" t="Include" />
+                <e p="RedundancyReport.cs" t="Include" />
+              </e>
+              <e p="ViewModels" t="Include">
+                <e p="AbstractViewModel.cs" t="Include" />
+                <e p="BuildVM.cs" t="Include" />
+                <e p="MainToolBarVM.cs" t="Include" />
+              </e>
+              <e p="Views" t="Include">
+                <e p="BuildPanel.cs" t="Include" />
+                <e p="MainToolBar.cs" t="Include" />
+                <e p="MainWindow.cs" t="Include" />
+                <e p="Menus" t="Include">
+                  <e p="SimulationMenu.cs" t="Include" />
+                </e>
+                <e p="Panel.cs" t="Include" />
+                <e p="ProgressBar.cs" t="Include" />
+                <e p="RedundancyAnalysisPanel.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Executors" t="Include">
+              <e p="EditorExecutors.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Notices.txt" t="Include" />
+          <e p="Plugins" t="Include">
+            <e p="Editor" t="Include">
+              <e p="LZ4-License.txt" t="Include" />
+              <e p="SevenZip-License.txt" t="Include" />
+            </e>
+            <e p="Ionic.Zip" t="Include">
+              <e p="License.txt" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Framework" t="Include">
+              <e p="AggregateException.cs" t="Include" />
+              <e p="Asynchronous" t="Include">
+                <e p="AsyncResult.cs" t="Include" />
+                <e p="AsyncTask.cs" t="Include" />
+                <e p="Callbackable.cs" t="Include" />
+                <e p="CoroutineAwaiter.cs" t="Include" />
+                <e p="CoroutineAwaiterExtensions.cs" t="Include" />
+                <e p="CoroutineTask.cs" t="Include" />
+                <e p="IAsyncResult.cs" t="Include" />
+                <e p="IAsyncTask.cs" t="Include" />
+                <e p="IAwaiter.cs" t="Include" />
+                <e p="ImmutableAsyncResult.cs" t="Include" />
+                <e p="ImmutableProgressResult.cs" t="Include" />
+                <e p="IProgressPromise.cs" t="Include" />
+                <e p="IProgressResult.cs" t="Include" />
+                <e p="IProgressTask.cs" t="Include" />
+                <e p="IPromise.cs" t="Include" />
+                <e p="ProgressResult.cs" t="Include" />
+                <e p="ProgressTask.cs" t="Include" />
+                <e p="Synchronizable.cs" t="Include" />
+                <e p="TaskYieldInstruction.cs" t="Include" />
+                <e p="TaskYieldInstructionExtensions.cs" t="Include" />
+              </e>
+              <e p="Attributes" t="Include">
+                <e p="EnumExtensions.cs" t="Include" />
+                <e p="RemarkAttribute.cs" t="Include" />
+              </e>
+              <e p="Bundles" t="Include">
+                <e p="AbstractResources.cs" t="Include" />
+                <e p="AndroidFileUtil.cs" t="Include" />
+                <e p="AssetBundle" t="Include">
+                  <e p="AbstractLoaderBuilder.cs" t="Include" />
+                  <e p="BundleLoader.cs" t="Include" />
+                  <e p="BundleManager.cs" t="Include" />
+                  <e p="BundleResources.cs" t="Include" />
+                  <e p="CryptographBundleLoader.cs" t="Include" />
+                  <e p="DefaultBundle.cs" t="Include" />
+                  <e p="FileAsyncBundleLoader.cs" t="Include" />
+                  <e p="FileAsyncComplexLoaderBuilder.cs" t="Include" />
+                  <e p="ILoaderBuilder.cs" t="Include" />
+                  <e p="InternalBundleWrapper.cs" t="Include" />
+                  <e p="LRUCache.cs" t="Include" />
+                  <e p="UnityWebRequestBundleLoader.cs" t="Include" />
+                  <e p="UnityWebRequestComplexLoaderBuilder.cs" t="Include" />
+                  <e p="WWWBundleLoader.cs" t="Include" />
+                  <e p="WWWComplexLoaderBuilder.cs" t="Include" />
+                </e>
+                <e p="AssetPathInfo.cs" t="Include" />
+                <e p="BundleInfo.cs" t="Include" />
+                <e p="BundleManifest.cs" t="Include" />
+                <e p="BundleManifestLoader.cs" t="Include" />
+                <e p="BundleSetting.cs" t="Include" />
+                <e p="BundleUtil.cs" t="Include" />
+                <e p="CryptographUtil.cs" t="Include" />
+                <e p="Cryptography" t="Include">
+                  <e p="IDecryptor.cs" t="Include" />
+                  <e p="IEncryptor.cs" t="Include" />
+                  <e p="RijndaelCryptograph.cs" t="Include" />
+                </e>
+                <e p="Execution" t="Include">
+                  <e p="ITask.cs" t="Include" />
+                  <e p="ITaskExecutor.cs" t="Include" />
+                  <e p="PriorityTaskExecutor.cs" t="Include" />
+                </e>
+                <e p="IBundle.cs" t="Include" />
+                <e p="IBundleManager.cs" t="Include" />
+                <e p="IBundleManifestLoader.cs" t="Include" />
+                <e p="IManifestUpdatable.cs" t="Include" />
+                <e p="IResources.cs" t="Include" />
+                <e p="local" t="Include">
+                  <e p="LocalBundle.cs" t="Include" />
+                  <e p="LocalBundleManager.cs" t="Include" />
+                  <e p="LocalPathInfoParser.cs" t="Include" />
+                  <e p="LocalResources.cs" t="Include" />
+                </e>
+                <e p="LoopingReferenceException.cs" t="Include" />
+                <e p="Path.cs" t="Include" />
+                <e p="PathInfoParser" t="Include">
+                  <e p="AutoMappingPathInfoParser.cs" t="Include" />
+                  <e p="IPathInfoParser.cs" t="Include" />
+                  <e p="SimplePathInfoParser.cs" t="Include" />
+                </e>
+                <e p="ResourcesExtensions.cs" t="Include" />
+                <e p="SceneLoadingResult.cs" t="Include" />
+                <e p="Simulation" t="Include">
+                  <e p="AssetDatabaseHelper.cs" t="Include" />
+                  <e p="SimulationAutoMappingPathInfoParser.cs" t="Include" />
+                  <e p="SimulationBundle.cs" t="Include" />
+                  <e p="SimulationBundleManager.cs" t="Include" />
+                  <e p="SimulationInternalBundleWrapper.cs" t="Include" />
+                  <e p="SimulationResources.cs" t="Include" />
+                  <e p="SimulationSetting.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Commands" t="Include">
+                <e p="CommandBase.cs" t="Include" />
+                <e p="CompositeCommand.cs" t="Include" />
+                <e p="IActiveAware.cs" t="Include" />
+                <e p="ICommand.cs" t="Include" />
+                <e p="RelayCommand.cs" t="Include" />
+                <e p="SimpleCommand.cs" t="Include" />
+              </e>
+              <e p="Contexts" t="Include">
+                <e p="ApplicationContext.cs" t="Include" />
+                <e p="Context.cs" t="Include" />
+                <e p="PlayerContext.cs" t="Include" />
+              </e>
+              <e p="Execution" t="Include">
+                <e p="AbstractExecutor.cs" t="Include" />
+                <e p="CoroutineExecutor.cs" t="Include" />
+                <e p="CoroutineResult.cs" t="Include" />
+                <e p="CoroutineScheduledExecutor.cs" t="Include" />
+                <e p="CountDownEvent.cs" t="Include" />
+                <e p="CountFinishedEvent.cs" t="Include" />
+                <e p="Executors.cs" t="Include" />
+                <e p="ICoroutineExecutor.cs" t="Include" />
+                <e p="ICoroutinePromise.cs" t="Include" />
+                <e p="IMainLoopExecutor.cs" t="Include" />
+                <e p="InterceptableEnumerator.cs" t="Include" />
+                <e p="IScheduledExecutor.cs" t="Include" />
+                <e p="IThreadExecutor.cs" t="Include" />
+                <e p="MainLoopExecutor.cs" t="Include" />
+                <e p="RejectedExecutionException.cs" t="Include" />
+                <e p="ThreadExecutor.cs" t="Include" />
+                <e p="ThreadScheduledExecutor.cs" t="Include" />
+                <e p="WaitWhile.cs" t="Include" />
+              </e>
+              <e p="Messaging" t="Include">
+                <e p="IMessenger.cs" t="Include" />
+                <e p="MessageBase.cs" t="Include" />
+                <e p="Messenger.cs" t="Include" />
+                <e p="PropertyChangedMessage.cs" t="Include" />
+                <e p="Subject.cs" t="Include" />
+              </e>
+              <e p="Net" t="Include">
+                <e p="Http" t="Include">
+                  <e p="DownloadFileHandler.cs" t="Include" />
+                  <e p="FileDownloaderBase.cs" t="Include" />
+                  <e p="IFileDownloader.cs" t="Include" />
+                  <e p="UnityWebRequestFileDownloader.cs" t="Include" />
+                </e>
+                <e p="Progress.cs" t="Include" />
+                <e p="ProgressInfo.cs" t="Include" />
+              </e>
+              <e p="Observables" t="Include">
+                <e p="INotifyCollectionChanged.cs" t="Include" />
+                <e p="IObservableProperty.cs" t="Include" />
+                <e p="NotifyCollectionChangedEventArgs.cs" t="Include" />
+                <e p="ObservableDictionary.cs" t="Include" />
+                <e p="ObservableList.cs" t="Include" />
+                <e p="ObservableObject.cs" t="Include" />
+                <e p="ObservableProperty.cs" t="Include" />
+              </e>
+              <e p="Prefs" t="Include">
+                <e p="AbstractFactory.cs" t="Include" />
+                <e p="BinaryFilePreferences.cs" t="Include" />
+                <e p="DefaultEncryptor.cs" t="Include" />
+                <e p="DefaultSerializer.cs" t="Include" />
+                <e p="IEncryptor.cs" t="Include" />
+                <e p="IFactory.cs" t="Include" />
+                <e p="ISerializer.cs" t="Include" />
+                <e p="ITypeEncoder.cs" t="Include" />
+                <e p="PlayerPrefsPreferences.cs" t="Include" />
+                <e p="Preferences.cs" t="Include" />
+                <e p="TypeEncoder" t="Include">
+                  <e p="JsonTypeEncoder.cs" t="Include" />
+                  <e p="PrimitiveTypeEncoder.cs" t="Include" />
+                  <e p="VersionTypeEncoder.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Security" t="Include">
+                <e p="Cryptography" t="Include">
+                  <e p="AesCTRCryptograph.cs" t="Include" />
+                  <e p="AesCTRCryptoStream.cs" t="Include" />
+                  <e p="AesCTRSymmetricAlgorithm.cs" t="Include" />
+                  <e p="IDecryptor.cs" t="Include" />
+                  <e p="IEncryptor.cs" t="Include" />
+                  <e p="IStreamDecryptor.cs" t="Include" />
+                  <e p="IStreamEncryptor.cs" t="Include" />
+                  <e p="RijndaelCryptograph.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Services" t="Include">
+                <e p="AbstractServiceBundle.cs" t="Include" />
+                <e p="DuplicateRegisterServiceException.cs" t="Include" />
+                <e p="IServiceBundle.cs" t="Include" />
+                <e p="IServiceContainer.cs" t="Include" />
+                <e p="IServiceLocator.cs" t="Include" />
+                <e p="IServiceRegistry.cs" t="Include" />
+                <e p="ServiceContainer.cs" t="Include" />
+              </e>
+              <e p="TypeExtensions.cs" t="Include" />
+              <e p="Utilities" t="Include">
+                <e p="FileUtil.Android.cs" t="Include" />
+                <e p="FileUtil.Compression.cs" t="Include" />
+                <e p="FileUtil.cs" t="Include" />
+                <e p="FileUtil.IonicZip.cs" t="Include" />
+                <e p="FilterEnumerator.cs" t="Include" />
+                <e p="StringSpliter.cs" t="Include" />
+                <e p="TransformEnumerator.cs" t="Include" />
+                <e p="TypeUtility.cs" t="Include" />
+                <e p="WeakAction.cs" t="Include" />
+                <e p="WeakBase.cs" t="Include" />
+                <e p="WeakFunc.cs" t="Include" />
+                <e p="WeakValueDictionary.cs" t="Include" />
+              </e>
+              <e p="WeakDelegateExtensions.cs" t="Include" />
+            </e>
+            <e p="Log" t="Include">
+              <e p="DefaultLogFactory.cs" t="Include" />
+              <e p="ILog.cs" t="Include" />
+              <e p="ILogFactory.cs" t="Include" />
+              <e p="Level.cs" t="Include" />
+              <e p="LogManager.cs" t="Include" />
             </e>
           </e>
         </e>
